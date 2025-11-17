@@ -1,0 +1,43 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      borderRadius: {
+        sm: "calc(var(--radius) - 4px)",
+        md: "calc(var(--radius) - 2px)",
+        lg: "var(--radius)",
+        xl: "calc(var(--radius) + 4px)",
+      },
+      colors: {
+        background: "oklch(1 0 0)",
+        foreground: "oklch(0.235 0.015 65)",
+        card: "oklch(1 0 0)",
+        "card-foreground": "oklch(0.235 0.015 65)",
+        popover: "oklch(1 0 0)",
+        "popover-foreground": "oklch(0.235 0.015 65)",
+        secondary: "oklch(0.98 0.001 286.375)",
+        "secondary-foreground": "oklch(0.4 0.015 65)",
+        muted: "oklch(0.967 0.001 286.375)",
+        "muted-foreground": "oklch(0.552 0.016 285.938)",
+        accent: "oklch(0.967 0.001 286.375)",
+        "accent-foreground": "oklch(0.141 0.005 285.823)",
+        destructive: "oklch(0.577 0.245 27.325)",
+        "destructive-foreground": "oklch(0.985 0 0)",
+        border: "oklch(0.92 0.004 286.32)",
+        input: "oklch(0.92 0.004 286.32)",
+        ring: "oklch(0.623 0.214 259.815)",
+        sidebar: "oklch(0.985 0 0)",
+        "sidebar-foreground": "oklch(0.235 0.015 65)",
+        "sidebar-accent": "oklch(0.967 0.001 286.375)",
+        "sidebar-accent-foreground": "oklch(0.141 0.005 285.823)",
+        "sidebar-border": "oklch(0.92 0.004 286.32)",
+        "sidebar-ring": "oklch(0.623 0.214 259.815)",
+      },
+    },
+  },
+  plugins: [],
+};
