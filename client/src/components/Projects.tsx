@@ -15,7 +15,7 @@ export default function Projects() {
       description:
         "Personal portfolio website built with React, TypeScript, and Tailwind CSS. Features smooth animations, responsive design, and modern UI components.",
       technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "Vercel"],
-      github: "https://github.com",
+      github: "https://github.com/alvarobarcelona/portfolio",
       live: "#",
     },
     {
@@ -38,7 +38,15 @@ export default function Projects() {
       description:
         "Project with Angular using API queries to receive certain data. Completed during formation",
       technologies: ["Angular", "TypeScript", "CSS", "HTML"],
-      github: "https://github.com",
+      github: "https://github.com/alvarobarcelona/starWarsExplorer",
+      
+    },
+    {
+      title: "Family Planner",
+      description:
+        "Task and event log based on Google Calendar. Customizing utilities for daily use and offering a clear and fast overview.",
+      technologies: ["React", "TypeScript","JavaScript", "Tailwind", "PostgreSQL"],
+      github: "https://github.chttps://github.com/alvarobarcelona/family-planner",
       
     }
   ];
