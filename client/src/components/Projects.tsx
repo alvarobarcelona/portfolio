@@ -58,8 +58,7 @@ export default function Projects() {
         "Tailwind",
         "PostgreSQL",
       ],
-      github:
-        "https://github.chttps://github.com/alvarobarcelona/family-planner",
+      github: "https://github.com/alvarobarcelona/family-planner",
     },
   ];
 
