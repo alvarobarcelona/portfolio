@@ -59,7 +59,7 @@ export default function About() {
               providing technical support to end users.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Currently, I'm expanding my expertise in the React ecosystem and
+              Currently, I'm expanding my expertise in the <span className="text-foreground font-medium">React ecosystem</span> and
               modern development practices. I'm fluent in German (B2 certified),
               English, Spanish, and Catalan, which enables me to work
               effectively in international teams and communicate with diverse

@@ -22,8 +22,15 @@ export default function Projects() {
       title: "Moodle Plugin Development",
       description:
         "Custom plugins and themes for Moodle LMS, including advanced features for building and trainings web Site of VW Finalcial Services(Trainingsportal) and bug fixes for existing modules.",
-      technologies: ["PHP", "MySQL", "JS", "CSS/SCSS","Laravel", "Twig", "HTML"],
-      github: "",
+      technologies: [
+        "PHP",
+        "MySQL",
+        "JS",
+        "CSS/SCSS",
+        "Laravel",
+        "Twig",
+        "HTML",
+      ],
       live: "https://www.training.vwfsag.de/mod/ichome/",
     },
     {
@@ -33,22 +40,27 @@ export default function Projects() {
       technologies: ["PHP", "JS", "Tailwind CSS", "MySQL", "HTML"],
       github: "https://github.com/alvarobarcelona/urlaubsplaner",
     },
-      {
+    {
       title: "StarWars explorer",
       description:
         "Project with Angular using API queries to receive certain data. Completed during formation",
       technologies: ["Angular", "TypeScript", "CSS", "HTML"],
       github: "https://github.com/alvarobarcelona/starWarsExplorer",
-      
     },
     {
       title: "Family Planner",
       description:
         "Task and event log based on Google Calendar. Customizing utilities for daily use and offering a clear and fast overview.",
-      technologies: ["React", "TypeScript","JavaScript", "Tailwind", "PostgreSQL"],
-      github: "https://github.chttps://github.com/alvarobarcelona/family-planner",
-      
-    }
+      technologies: [
+        "React",
+        "TypeScript",
+        "JavaScript",
+        "Tailwind",
+        "PostgreSQL",
+      ],
+      github:
+        "https://github.chttps://github.com/alvarobarcelona/family-planner",
+    },
   ];
 
   return (

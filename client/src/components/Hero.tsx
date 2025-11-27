@@ -21,7 +21,7 @@ export default function Hero() {
               Hi, I'm <span className="text-gradient">Álvaro</span>
             </h1>
             <h2 className="text-2xl md:text-3xl text-muted-foreground font-light">
-              Junior Full stack Web Developer
+              Junior / Mid Full Stack Developer
             </h2>
           </div>
 
