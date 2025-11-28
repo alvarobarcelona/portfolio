@@ -1,7 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
+import { useEffect } from "react";
+import { initHeroAnimation } from "@/lib/iniHeroAnimation";
+
 
 export default function Hero() {
+
+  useEffect(() => {
+    const cleanup = initHeroAnimation();
+    return cleanup;
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -9,12 +18,17 @@ export default function Hero() {
     }
   };
 
+
+
   return (
     <section
       id="hero"
       className="min-h-screen flex items-center justify-center relative"
     >
       <div className="container">
+        {/* efecto nieve sol para el HERO */}
+        <canvas id="c2"></canvas>
+
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
@@ -30,6 +44,10 @@ export default function Hero() {
             modern, responsive applications using Javascript ,React, TypeScript,
             PHP, MySQL, CSS(Tailwind), .
           </p>
+
+          <div id="fixed-bg">
+            <canvas id="c"></canvas>
+          </div>
 
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <Button
