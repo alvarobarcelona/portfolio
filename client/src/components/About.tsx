@@ -65,6 +65,10 @@ export default function About() {
               effectively in international teams and communicate with diverse
               stakeholders.
             </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Recently, I’ve been actively exploring the practical use of AI in modern web applications. 
+              This includes integrating AI APIs, designing automation workflows, experimenting with prompt engineering, and applying AI-driven features to improve productivity, user experience, and decision-making within applications. My focus is on real, applied AI, not only theory—using it as a tool to build smarter and more efficient software.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
