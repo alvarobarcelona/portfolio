@@ -12,13 +12,13 @@ export default defineConfig({
   plugins,
   resolve: {
     alias: {
-      "@": path.resolve(import.meta.dirname, "client", "src"),
+      "@": path.resolve(import.meta.dirname, "app", "src"),
       "@shared": path.resolve(import.meta.dirname, "shared"),
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
   envDir: path.resolve(import.meta.dirname),
-  root: "client",
+  root: "app",
   build: {
     outDir: "../dist",
     emptyOutDir: true,
