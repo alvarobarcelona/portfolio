@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Github, ExternalLink } from "lucide-react";
+import { use } from "react";
 
 export default function Projects() {
   const projects = [
@@ -60,6 +61,19 @@ export default function Projects() {
       ],
       github: "https://github.com/alvarobarcelona/family-planner",
     },
+    {
+      title: "Padel Tournaments",
+      description:
+        " Application created to organize small American and Mexican-style tournaments. Designed for use on mobile phones but also on the web. Local storage is local storage in the browser, without a database. If necessary, a database could be created.Totally practical and currently in use for events with friends.",
+      technologies: [
+        "JavaScript",
+        "Tailwind",
+        "HTML",
+        "CSS",
+        
+      ],
+      github: "https://github.com/alvarobarcelona/Padel-Tournaments",
+    },
   ];
 
   return (
@@ -104,7 +118,7 @@ export default function Projects() {
                         rel="noopener noreferrer"
                       >
                         <Github className="h-4 w-4 mr-2" />
-                        Code
+                        Code / Readme
                       </a>
                     </Button>
                     {project.live && (
