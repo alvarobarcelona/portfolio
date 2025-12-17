@@ -40,9 +40,8 @@ export default function Hero() {
           </div>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Specialized in web development with 3 years of experience building
-            modern, responsive applications using Javascript ,React, TypeScript,
-            PHP, MySQL, CSS(Tailwind), .
+            Web Developer with a solid foundation in backend and web technologies, continuously developing skills in modern, component-based frontend frameworks such as React and TypeScript.
+
           </p>
 
           <div id="fixed-bg">

@@ -34,7 +34,7 @@ export default function About() {
 
           <div className="prose prose-invert max-w-none">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm a passionate web developer with a strong foundation in both
+              I'm a passionate web developer with a solid foundation in both
               frontend and backend technologies. My journey in software
               development began with a professional training as an{" "}
               <span className="text-foreground font-medium">

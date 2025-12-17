@@ -24,7 +24,7 @@ export default function Experience() {
       company: "Binokers SL (Start-up)",
       location: "Barcelona, Spain",
       period: "October 2015 - October 2017",
-      description: "Supporting project management and business development",
+      description: "Supporting project management and business development. Design or buy your dreamed sunglasses",
       responsibilities: [
         "Negotiations with suppliers and potential customers",
         "Coordination of activities with the marketing team",
