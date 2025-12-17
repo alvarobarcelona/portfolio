@@ -58,6 +58,7 @@ export default function About() {
               developing Moodle plugins, building responsive frontends, and
               providing technical support to end users.
             </p>
+            {""}
             <p className="text-lg text-muted-foreground leading-relaxed">
               Currently, I'm expanding my expertise in the <span className="text-foreground font-medium">React ecosystem</span> and
               modern development practices. I'm fluent in German (B2 certified),
