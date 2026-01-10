@@ -4,9 +4,10 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
+  CardDate,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, Calendar, ExternalLink } from "lucide-react";
 import { use } from "react";
 
 export default function Projects() {
@@ -18,6 +19,7 @@ export default function Projects() {
       technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "Vercel"],
       github: "https://github.com/alvarobarcelona/portfolio",
       live: "#",
+      date: "Last update: 10/01/2026"
     },
     {
       title: "Moodle Plugin Development",
@@ -40,6 +42,7 @@ export default function Projects() {
         "Full-stack web application with frontend and backend. Includes user authentication, data management, and responsive UI.",
       technologies: ["PHP", "JS", "Tailwind CSS", "MySQL", "HTML"],
       github: "https://github.com/alvarobarcelona/urlaubsplaner",
+      date: "Last update: 10/06/2025"
     },
     {
       title: "StarWars explorer",
@@ -47,6 +50,7 @@ export default function Projects() {
         "Project with Angular using API queries to receive certain data. Completed during formation",
       technologies: ["Angular", "TypeScript", "CSS", "HTML"],
       github: "https://github.com/alvarobarcelona/starWarsExplorer",
+      date: "Last update: 10/05/2025"
     },
     {
       title: "Family Planner",
@@ -60,6 +64,7 @@ export default function Projects() {
         "PostgreSQL",
       ],
       github: "https://github.com/alvarobarcelona/family-planner",
+      date: "Last update: 06/01/2026"
     },
     {
       title: "Padel Tournaments",
@@ -70,9 +75,10 @@ export default function Projects() {
         "Tailwind",
         "HTML",
         "CSS",
-        
+
       ],
       github: "https://github.com/alvarobarcelona/Padel-Tournaments",
+      date: "Last update: 05/01/2026"
     },
     {
       title: "Web Aloha Delta",
@@ -86,7 +92,8 @@ export default function Projects() {
         "Resend API"
       ],
       github: "https://github.com/alvarobarcelona/Web-AlohaDelta",
-      live: "https://www.apartamentoalohadelta.com/"
+      live: "https://www.apartamentoalohadelta.com/",
+      date: "Last update: 10/01/2026"
     },
     {
       title: "PadelUp",
@@ -100,6 +107,9 @@ export default function Projects() {
         "Supabase"
       ],
       github: "https://github.com/alvarobarcelona/PadelUp",
+      live: "https://padel-up-nine.vercel.app/",
+      date: "Last update: 28/12/2025"
+
     }
   ];
 
@@ -162,6 +172,7 @@ export default function Projects() {
                     )}
                   </div>
                 </CardContent>
+                <CardDate>{project.date}</CardDate>
               </Card>
             ))}
           </div>

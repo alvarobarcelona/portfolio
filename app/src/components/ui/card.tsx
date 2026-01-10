@@ -47,6 +47,15 @@ function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
     />
   );
 }
+function CardDate({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-date"
+      className={cn("text-muted-foreground text-sm flex justify-center", className)}
+      {...props}
+    />
+  );
+}
 
 function CardAction({ className, ...props }: React.ComponentProps<"div">) {
   return (
@@ -89,4 +98,5 @@ export {
   CardAction,
   CardDescription,
   CardContent,
+  CardDate,
 };

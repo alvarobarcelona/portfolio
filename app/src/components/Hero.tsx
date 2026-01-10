@@ -26,7 +26,7 @@ export default function Hero() {
       className="min-h-screen flex items-center justify-center relative"
     >
       <div className="container">
-        {/* efecto nieve sol para el HERO */}
+        {/* efecto nieve solo para el HERO */}
         <canvas id="c2"></canvas>
 
         <div className="max-w-4xl mx-auto text-center space-y-8">

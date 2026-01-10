@@ -6,12 +6,12 @@ export default function Skills() {
       title: "Frontend",
       skills: [
         { name: "JavaScript", level: "Intermediate" },
-        { name: "React", level: "Learning" },
-        { name: "TypeScript", level: "Learning" },
+        { name: "React", level: "Working Knowledge" },
+        { name: "TypeScript", level: "Working Knowledge" },
         { name: "HTML5", level: "Advanced" },
         { name: "CSS3 / SCSS", level: "Advanced" },
         { name: "Tailwind CSS", level: "Intermediate" },
-        { name: "Next.js", level: "Learning" },
+        { name: "Next.js", level: "Working Knowledge" },
       ],
     },
     {
@@ -29,7 +29,6 @@ export default function Skills() {
         { name: "Jira", level: "Advanced" },
         { name: "Moodle Development", level: "Advanced" },
         { name: "Agile Methodologies", level: "Advanced" },
-        { name: "REST APIs", level: "Intermediate" },
         { name: "REST APIs", level: "Intermediate" },
         { name: "Slack", level: "Intermediate" },
         { name: "Microsoft Teams", level: "Intermediate" },

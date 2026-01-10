@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDate } from "@/components/ui/card";
 import { Briefcase, Calendar } from "lucide-react";
 
 export default function Experience() {

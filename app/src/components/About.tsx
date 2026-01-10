@@ -1,23 +1,28 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Code2, Briefcase, GraduationCap } from "lucide-react";
+import { Code2, Briefcase, Brain, Rocket } from "lucide-react";
 
 export default function About() {
   const highlights = [
     {
       icon: Code2,
-      title: "Web Development",
+      title: "Full Stack Focus",
       description:
-        "3 years of experience(Ausbildung) + Continuing education in modern web technologies",
+        "Building end-to-end solutions using React 19, TypeScript, Node.js and modern databases.",
     },
     {
       icon: Briefcase,
-      title: "Professional Experience",
-      description: "Specialized in agile development and team collaboration",
+      title: "Business Mindset",
+      description: "About 10 years in logistics & logistics management. I build software that solves real business problems.",
     },
     {
-      icon: GraduationCap,
-      title: "Continuous Learning",
-      description: "Currently advancing skills in React 19, TypeScript, and JS",
+      icon: Brain,
+      title: "AI-Enhanced Workflow",
+      description: "Leveraging AI as an external skeleton to code faster, prototype rapidly, and focus on architecture.",
+    },
+    {
+      icon: Rocket,
+      title: "Agile & Teamwork",
+      description: "Proven track record in agile environments, cross-functional teams.",
     },
   ];
 
@@ -67,12 +72,22 @@ export default function About() {
               stakeholders.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Recently, I’ve been actively exploring the practical use of AI in modern web applications. 
-              This includes integrating AI APIs, designing automation workflows, experimenting with prompt engineering, and applying AI-driven features to improve productivity, user experience, and decision-making within applications. My focus is on real, applied AI, not only theory—using it as a tool to build smarter and more efficient software.
+              My background involves more than just code. With over a decade of experience in
+              <span className="text-foreground font-medium"> logistics management and startup operations</span>,
+              I bring a unique "business-first" perspective to development. I understand that code is a means to an end:
+              solving efficient problems, optimizing workflows, and delivering value to users.
+            </p>
+
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              I embrace the future of coding by integrating <span className="text-foreground font-medium">Artificial Intelligence</span> into my daily workflow.
+              I don't just "generate" code; I use AI as a powerful exoskeleton to accelerate scaffolding,
+              debug complex logic, and prototype ideas at record speed. This allows me to focus my human energy on what matters most:
+              <span className="text-foreground font-medium"> System Architecture, User Experience, and solving high-level logic puzzles.</span>
+              I am a pilot, and AI is my co-pilot.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {highlights.map((item, index) => {
               const Icon = item.icon;
               return (
