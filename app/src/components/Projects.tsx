@@ -74,6 +74,33 @@ export default function Projects() {
       ],
       github: "https://github.com/alvarobarcelona/Padel-Tournaments",
     },
+    {
+      title: "Web Aloha Delta",
+      description:
+        "Full-stack vacation rental platform for my apartment. Features a custom booking engine with real-time availability, an admin dashboard for reservation management, automated email notifications via Resend, and an online guest check-in system.",
+      technologies: [
+        "Next.js 15",
+        "TypeScript",
+        "Tailwind CSS",
+        "PostgreSQL, Cron (Vercel)",
+        "Resend API"
+      ],
+      github: "https://github.com/alvarobarcelona/Web-AlohaDelta",
+      live: "https://www.apartamentoalohadelta.com/"
+    },
+    {
+      title: "PadelUp",
+      description:
+        "Social platform for padel players that collects match statistics and suggests matches between players of the same level once a few results have been entered. Real-time chat and a system for verifying results between teams. Includes gamification with achievements, friend management, and different rankings to reach the top with your matches. Available in three languages: English, Spanish, and German.",
+      technologies: [
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS",
+        "Vite",
+        "Supabase"
+      ],
+      github: "https://github.com/alvarobarcelona/PadelUp",
+    }
   ];
 
   return (
