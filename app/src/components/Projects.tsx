@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Github, Calendar, ExternalLink } from "lucide-react";
-import { use } from "react";
 
 export default function Projects() {
   const projects = [
