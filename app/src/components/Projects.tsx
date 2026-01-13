@@ -7,7 +7,7 @@ import {
   CardDate,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Github, Calendar, ExternalLink } from "lucide-react";
+import { Github, Calendar, ExternalLink, Lock } from "lucide-react";
 
 export default function Projects() {
   const projects = [
@@ -18,7 +18,8 @@ export default function Projects() {
       technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "Vercel"],
       github: "https://github.com/alvarobarcelona/portfolio",
       live: "#",
-      date: "Last update: 10/01/2026"
+      date: "Last update: 10/01/2026",
+      isPrivate: false,
     },
     {
       title: "Moodle Plugin Development",
@@ -34,6 +35,7 @@ export default function Projects() {
         "HTML",
       ],
       live: "https://www.training.vwfsag.de/mod/ichome/",
+      isPrivate: true,
     },
     {
       title: "Web Application / Urlaubsplaner",
@@ -41,7 +43,8 @@ export default function Projects() {
         "Full-stack web application with frontend and backend. Includes user authentication, data management, and responsive UI.",
       technologies: ["PHP", "JS", "Tailwind CSS", "MySQL", "HTML"],
       github: "https://github.com/alvarobarcelona/urlaubsplaner",
-      date: "Last update: 10/06/2025"
+      date: "Last update: 10/06/2025",
+      isPrivate: false,
     },
     {
       title: "StarWars explorer",
@@ -49,7 +52,8 @@ export default function Projects() {
         "Project with Angular using API queries to receive certain data. Completed during formation",
       technologies: ["Angular", "TypeScript", "CSS", "HTML"],
       github: "https://github.com/alvarobarcelona/starWarsExplorer",
-      date: "Last update: 10/05/2025"
+      date: "Last update: 10/05/2025",
+      isPrivate: false,
     },
     {
       title: "Family Planner",
@@ -63,7 +67,8 @@ export default function Projects() {
         "PostgreSQL",
       ],
       github: "https://github.com/alvarobarcelona/family-planner",
-      date: "Last update: 06/01/2026"
+      date: "Last update: 06/01/2026",
+      isPrivate: false,
     },
     {
       title: "Padel Tournaments",
@@ -77,7 +82,8 @@ export default function Projects() {
 
       ],
       github: "https://github.com/alvarobarcelona/Padel-Tournaments",
-      date: "Last update: 05/01/2026"
+      date: "Last update: 05/01/2026",
+      isPrivate: true,
     },
     {
       title: "Web Aloha Delta",
@@ -92,7 +98,8 @@ export default function Projects() {
       ],
       github: "https://github.com/alvarobarcelona/Web-AlohaDelta",
       live: "https://www.apartamentoalohadelta.com/",
-      date: "Last update: 10/01/2026"
+      date: "Last update: 10/01/2026",
+      isPrivate: true,
     },
     {
       title: "PadelUp",
@@ -107,8 +114,8 @@ export default function Projects() {
       ],
       github: "https://github.com/alvarobarcelona/PadelUp",
       live: "https://padel-up-nine.vercel.app/",
-      date: "Last update: 28/12/2025"
-
+      date: "Last update: 28/12/2025",
+      isPrivate: true,
     }
   ];
 
@@ -147,16 +154,23 @@ export default function Projects() {
                     ))}
                   </div>
                   <div className="flex items-center gap-2">
-                    <Button variant="outline" size="sm" asChild>
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Github className="h-4 w-4 mr-2" />
-                        Code / Readme
-                      </a>
-                    </Button>
+                    {project.isPrivate ? (
+                      <Button variant="outline" size="sm" disabled>
+                        <Lock className="h-4 w-4 mr-2" />
+                        Private Repository
+                      </Button>
+                    ) : (
+                      <Button variant="outline" size="sm" asChild>
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Github className="h-4 w-4 mr-2" />
+                          Code / Readme
+                        </a>
+                      </Button>
+                    )}
                     {project.live && (
                       <Button variant="outline" size="sm" asChild>
                         <a
