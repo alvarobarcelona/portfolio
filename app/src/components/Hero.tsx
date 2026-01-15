@@ -27,7 +27,7 @@ export default function Hero() {
     >
       <div className="container">
         {/* efecto nieve solo para el HERO */}
-        <canvas id="c2"></canvas>
+        {/* <canvas id="c2"></canvas> */}
 
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div className="space-y-4">
@@ -44,9 +44,9 @@ export default function Hero() {
 
           </p>
 
-          <div id="fixed-bg">
+          {/* <div id="fixed-bg">
             <canvas id="c"></canvas>
-          </div>
+          </div> */}
 
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <Button
