@@ -1,63 +1,20 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDate } from "@/components/ui/card";
 import { Briefcase, Calendar } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/lib/i18n";
 
 export default function Experience() {
-  const experiences = [
-    {
-      title: "Application Developer (Apprenticeship)",
-      company: "ICON Vernetze Kommunikation GmbH",
-      location: "Braunschweig, Germany",
-      period: "August 2022 - July 2025",
-      description: "Focused on web development in an agile project environment",
-      responsibilities: [
-        "Working in agile project environment with the development team",
-        "Moodle development: Plugins, theme development, bug fixing, support",
-        "Frontend development: HTML, JavaScript, CSS, SCSS",
-        "Backend development: PHP, MySQL",
-        "End-user support via phone and email",
-        "Supporting and onboarding new apprentices",
-        "Tools: Jira, Confluence, Teams, Slack",
-      ],
-    },
-    {
-      title: "Project Manager Assistant",
-      company: "Binokers SL (Start-up)",
-      location: "Barcelona, Spain",
-      period: "October 2015 - October 2017",
-      description: "Supporting project management and business development. Design or buy your dreamed sunglasses",
-      responsibilities: [
-        "Negotiations with suppliers and potential customers",
-        "Coordination of activities with the marketing team",
-        "Assistance in finding technical profiles for product realization",
-        "Product acceptance and quality analysis",
-      ],
-    },
-    {
-      title: "Logistics Management",
-      company: "Comercial Pinamas S.L",
-      location: "La Puebla de Castro, Huesca, Spain",
-      period: "December 2009 - April 2019",
-      description: "Warehouse and logistics specialist",
-      responsibilities: [
-        "Management of daily sales operations",
-        "Preparation and processing of orders",
-        "Customer incident resolution",
-        "Warehouse control (expiration dates and inventory management)",
-        "Inventory counts and shipping document creation",
-        "Goods receipt control, stock management, packaging",
-        "Order picking according to delivery notes",
-      ],
-    },
-  ];
+  const { language, t } = useLanguage();
+  const experiences = translations[language].experience.items;
 
   return (
     <section id="experience" className="py-24 bg-card/50">
       <div className="container">
         <div className="max-w-4xl mx-auto space-y-12">
           <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold">Work Experience</h2>
+            <h2 className="text-4xl md:text-5xl font-bold">{t('experience.title')}</h2>
             <p className="text-muted-foreground text-lg">
-              My professional journey and key roles
+              {t('experience.subtitle')}
             </p>
           </div>
 
@@ -92,7 +49,7 @@ export default function Experience() {
                     <p className="text-muted-foreground">{exp.description}</p>
                     <div className="space-y-2">
                       <h4 className="font-semibold text-sm">
-                        Key Responsibilities:
+                        {t('experience.responsibilities')}
                       </h4>
                       <ul className="space-y-1.5 text-sm text-muted-foreground">
                         {exp.responsibilities.map((resp, respIndex) => (

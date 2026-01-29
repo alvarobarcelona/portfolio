@@ -1,4 +1,7 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+
 export default function Footer() {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -6,10 +9,10 @@ export default function Footer() {
       <div className="container">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Álvaro Barcelona Peralta. All rights reserved.
+            © {currentYear} Álvaro Barcelona Peralta. {t('footer.rights')}
           </p>
           <p className="text-sm text-muted-foreground">
-            Built with React, TypeScript & Tailwind CSS
+            {t('footer.builtWith')}
           </p>
         </div>
       </div>

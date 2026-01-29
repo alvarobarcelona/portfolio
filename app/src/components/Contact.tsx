@@ -1,19 +1,22 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, MapPin, Linkedin, Github } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Contact() {
+  const { t } = useLanguage();
+
   const contactInfo = [
     {
       icon: Mail,
-      label: "Email",
+      label: t('contact.email'),
       value: "alvaro90barcelona@gmail.com",
       link: "mailto:alvaro90barcelona@gmail.com",
     },
     {
       icon: MapPin,
-      label: "Location",
-      value: "Braunschweig, Germany",
+      label: t('contact.location'),
+      value: t('contact.braunschweig'),
     },
   ];
 
@@ -35,9 +38,9 @@ export default function Contact() {
       <div className="container">
         <div className="max-w-4xl mx-auto space-y-12">
           <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold">Get In Touch</h2>
+            <h2 className="text-4xl md:text-5xl font-bold">{t('contact.title')}</h2>
             <p className="text-muted-foreground text-lg">
-              Feel free to reach out for opportunities or just to say hello
+              {t('contact.subtitle')}
             </p>
           </div>
 
@@ -92,7 +95,7 @@ export default function Contact() {
               <Button size="lg" asChild>
                 <a href="mailto:alvaro90barcelona@gmail.com">
                   <Mail className="h-5 w-5 mr-2" />
-                  Send me an Email
+                  {t('contact.sendEmail')}
                 </a>
               </Button>
             </div>

@@ -1,28 +1,30 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Code2, Briefcase, Brain, Rocket } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function About() {
+  const { t } = useLanguage();
+
   const highlights = [
     {
       icon: Code2,
-      title: "Full Stack Focus",
-      description:
-        "Building end-to-end solutions using React 19, TypeScript, Node.js and modern databases.",
+      title: t('about.highlights.fullstack.title'),
+      description: t('about.highlights.fullstack.desc'),
     },
     {
       icon: Briefcase,
-      title: "Business Mindset",
-      description: "About 10 years in logistics & logistics management. I build software that solves real business problems.",
+      title: t('about.highlights.business.title'),
+      description: t('about.highlights.business.desc'),
     },
     {
       icon: Brain,
-      title: "AI-Enhanced Workflow",
-      description: "Leveraging AI as an external skeleton to code faster, prototype rapidly, and focus on architecture.",
+      title: t('about.highlights.ai.title'),
+      description: t('about.highlights.ai.desc'),
     },
     {
       icon: Rocket,
-      title: "Agile & Teamwork",
-      description: "Proven track record in agile environments, cross-functional teams.",
+      title: t('about.highlights.agile.title'),
+      description: t('about.highlights.agile.desc'),
     },
   ];
 
@@ -31,59 +33,48 @@ export default function About() {
       <div className="container">
         <div className="max-w-4xl mx-auto space-y-12">
           <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold">About Me</h2>
+            <h2 className="text-4xl md:text-5xl font-bold">{t('about.title')}</h2>
             <p className="text-muted-foreground text-lg">
-              Get to know more about my background and expertise
+              {t('about.subtitle')}
             </p>
           </div>
 
           <div className="prose prose-invert max-w-none">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm a passionate web developer with a solid foundation in both
-              frontend and backend technologies. My journey in software
-              development began with a professional training as an{" "}
+              {t('about.p1')}{" "}
               <span className="text-foreground font-medium">
-                Application Developer (Fachinformatiker für
-                Anwendungsentwicklung)
+                {t('about.p1_span')}
               </span>
-              , where I specialized in web development.
+              {t('about.p1_end')}
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Throughout my career, I've worked extensively with web
-              technologies{" "}
+              {t('about.p2')}{" "}
               <span className="text-foreground font-medium">
-                (JavaScript, PHP, HTML, CSS and MySQL)
+                {t('about.p2_span')}
               </span>{" "}
-              and now learning by doing{" "}
+              {t('about.p2_middle')}{" "}
               <span className="text-foreground font-medium">
                 {" "}
-                React, TypeScript and Node.js
+                {t('about.p2_span2')}
               </span>
-              . I have hands-on experience in agile project environments,
-              developing Moodle plugins, building responsive frontends, and
-              providing technical support to end users.
+              {t('about.p2_end')}
             </p>
             {""}
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Currently, I'm expanding my expertise in the <span className="text-foreground font-medium">React ecosystem</span> and
-              modern development practices. I'm fluent in German (B2 certified),
-              English, Spanish, and Catalan, which enables me to work
-              effectively in international teams and communicate with diverse
-              stakeholders.
+              {t('about.p3')}{" "} <span className="text-foreground font-medium">{t('about.p3_span')}</span>{" "}
+              {t('about.p3_end')}
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              My background involves more than just code. With over a decade of experience in
-              <span className="text-foreground font-medium"> logistics management and startup operations</span>,
-              I bring a unique "business-first" perspective to development. I understand that code is a means to an end:
-              solving efficient problems, optimizing workflows, and delivering value to users.
+              {t('about.p4')}{" "}
+              <span className="text-foreground font-medium">{t('about.p4_span')}</span>
+              {t('about.p4_end')}
             </p>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I embrace the future of coding by integrating <span className="text-foreground font-medium">Artificial Intelligence</span> into my daily workflow.
-              I don't just "generate" code; I use AI as a powerful exoskeleton to accelerate scaffolding,
-              debug complex logic, and prototype ideas at record speed. This allows me to focus my human energy on what matters most:
-              <span className="text-foreground font-medium"> System Architecture, User Experience, and solving high-level logic puzzles.</span>
-              I am a pilot, and AI is my co-pilot.
+              {t('about.p5')}{" "} <span className="text-foreground font-medium">{t('about.p5_span')}</span>{" "}
+              {t('about.p5_end')}{" "}
+              <span className="text-foreground font-medium">{t('about.p5_span2')}</span>
+              {t('about.p5_final')}
             </p>
           </div>
 

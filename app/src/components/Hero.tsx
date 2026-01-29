@@ -2,9 +2,11 @@ import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
 import { useEffect } from "react";
 import { initHeroAnimation } from "@/lib/iniHeroAnimation";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 
 export default function Hero() {
+  const { t } = useLanguage();
 
   useEffect(() => {
     const cleanup = initHeroAnimation();
@@ -19,7 +21,6 @@ export default function Hero() {
   };
 
 
-
   return (
     <section
       id="hero"
@@ -32,16 +33,15 @@ export default function Hero() {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              Hi, I'm <span className="text-gradient">Álvaro</span>
+              {t('hero.greeting')} <span className="text-gradient">Álvaro</span>
             </h1>
             <h2 className="text-2xl md:text-3xl text-muted-foreground font-light">
-              Junior / Mid Full Stack Developer
+              {t('hero.role')}
             </h2>
           </div>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Web Developer with a solid foundation in backend and web technologies, continuously developing skills in modern, component-based frontend frameworks such as React and TypeScript.
-
+            {t('hero.description')}
           </p>
 
           {/* <div id="fixed-bg">
@@ -54,7 +54,7 @@ export default function Hero() {
               onClick={() => scrollToSection("contact")}
               className="group"
             >
-              Get in Touch
+              {t('hero.getInTouch')}
               <Mail className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
@@ -62,7 +62,7 @@ export default function Hero() {
               variant="outline"
               onClick={() => scrollToSection("projects")}
             >
-              View Projects
+              {t('hero.viewProjects')}
             </Button>
           </div>
 
@@ -99,7 +99,7 @@ export default function Hero() {
       <button
         onClick={() => scrollToSection("about")}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
-        aria-label="Scroll to About section"
+        aria-label={t('hero.scrollAbout')}
       >
         <ArrowDown className="h-6 w-6 text-muted-foreground" />
       </button>

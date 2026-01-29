@@ -8,13 +8,14 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Github, Calendar, ExternalLink, Lock } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/lib/i18n";
 
 export default function Projects() {
-  const projects = [
+  const { language, t } = useLanguage();
+
+  const projectMetadata = [
     {
-      title: "Portfolio Website",
-      description:
-        "Personal portfolio website built with React, TypeScript, and Tailwind CSS. Features smooth animations, responsive design, and modern UI components.",
       technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "Vercel"],
       github: "https://github.com/alvarobarcelona/portfolio",
       live: "#",
@@ -22,9 +23,6 @@ export default function Projects() {
       isPrivate: false,
     },
     {
-      title: "Moodle Plugin Development",
-      description:
-        "Custom plugins and themes for Moodle LMS, including advanced features for building and trainings web Site of VW Finalcial Services(Trainingsportal) and bug fixes for existing modules.",
       technologies: [
         "PHP",
         "MySQL",
@@ -38,27 +36,18 @@ export default function Projects() {
       isPrivate: true,
     },
     {
-      title: "Web Application / Urlaubsplaner",
-      description:
-        "Full-stack web application with frontend and backend. Includes user authentication, data management, and responsive UI.",
       technologies: ["PHP", "JS", "Tailwind CSS", "MySQL", "HTML"],
       github: "https://github.com/alvarobarcelona/urlaubsplaner",
       date: "Last update: 10/06/2025",
       isPrivate: false,
     },
     {
-      title: "StarWars explorer",
-      description:
-        "Project with Angular using API queries to receive certain data. Completed during formation",
       technologies: ["Angular", "TypeScript", "CSS", "HTML"],
       github: "https://github.com/alvarobarcelona/starWarsExplorer",
       date: "Last update: 10/05/2025",
       isPrivate: false,
     },
     {
-      title: "Family Planner",
-      description:
-        "Task and event log based on Google Calendar. Customizing utilities for daily use and offering a clear and fast overview.",
       technologies: [
         "React",
         "TypeScript",
@@ -71,24 +60,17 @@ export default function Projects() {
       isPrivate: false,
     },
     {
-      title: "Padel Tournaments",
-      description:
-        " Application created to organize small American and Mexican-style tournaments. Designed for use on mobile phones but also on the web. Local storage is local storage in the browser, without a database. If necessary, a database could be created.Totally practical and currently in use for events with friends.",
       technologies: [
         "JavaScript",
         "Tailwind",
         "HTML",
         "CSS",
-
       ],
       github: "https://github.com/alvarobarcelona/Padel-Tournaments",
       date: "Last update: 05/01/2026",
       isPrivate: true,
     },
     {
-      title: "Web Aloha Delta",
-      description:
-        "Full-stack vacation rental platform for my apartment. Features a custom booking engine with real-time availability, an admin dashboard for reservation management, automated email notifications via Resend, and an online guest check-in system.",
       technologies: [
         "Next.js 15",
         "TypeScript",
@@ -102,9 +84,6 @@ export default function Projects() {
       isPrivate: true,
     },
     {
-      title: "PadelUp",
-      description:
-        "Social platform for padel players that collects match statistics and suggests matches between players of the same level once a few results have been entered. Real-time chat and a system for verifying results between teams. Includes gamification with achievements, friend management, and different rankings to reach the top with your matches. Available in three languages: English, Spanish, and German.",
       technologies: [
         "React 19",
         "TypeScript",
@@ -119,14 +98,23 @@ export default function Projects() {
     }
   ];
 
+  const projects = projectMetadata.map((meta, index) => {
+    const translatedItem = translations[language].projects.items[index];
+    return {
+      ...meta,
+      title: translatedItem.title,
+      description: translatedItem.description,
+    };
+  });
+
   return (
     <section id="projects" className="py-24">
       <div className="container">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold">Projects</h2>
+            <h2 className="text-4xl md:text-5xl font-bold">{t('projects.title')}</h2>
             <p className="text-muted-foreground text-lg">
-              Some of my recent work and contributions
+              {t('projects.subtitle')}
             </p>
           </div>
 
@@ -157,7 +145,7 @@ export default function Projects() {
                     {project.isPrivate ? (
                       <Button variant="outline" size="sm" disabled>
                         <Lock className="h-4 w-4 mr-2" />
-                        Private Repository
+                        {t('projects.private')}
                       </Button>
                     ) : (
                       <Button variant="outline" size="sm" asChild>
@@ -167,7 +155,7 @@ export default function Projects() {
                           rel="noopener noreferrer"
                         >
                           <Github className="h-4 w-4 mr-2" />
-                          Code / Readme
+                          {t('projects.code')}
                         </a>
                       </Button>
                     )}
@@ -179,7 +167,7 @@ export default function Projects() {
                           rel="noopener noreferrer"
                         >
                           <ExternalLink className="h-4 w-4 mr-2" />
-                          Live
+                          {t('projects.live')}
                         </a>
                       </Button>
                     )}
@@ -198,7 +186,7 @@ export default function Projects() {
                 rel="noopener noreferrer"
               >
                 <Github className="h-5 w-5 mr-2" />
-                View More on GitHub
+                {t('projects.viewGitHub')}
               </a>
             </Button>
           </div>
