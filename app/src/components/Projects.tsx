@@ -56,6 +56,7 @@ export default function Projects() {
         "PostgreSQL",
       ],
       github: "https://github.com/alvarobarcelona/family-planner",
+      live: "https://family-planner-tau.vercel.app/",
       date: "Last update: 06/01/2026",
       isPrivate: false,
     },
@@ -94,7 +95,7 @@ export default function Projects() {
       github: "https://github.com/alvarobarcelona/PadelUp",
       live: "https://padel-up-nine.vercel.app/",
       date: "Last update: 28/12/2025",
-      isPrivate: true,
+      isPrivate: false,
     }
   ];
 
