@@ -76,20 +76,21 @@ export const en = {
     responsibilities: "Key Responsibilities:",
     items: [
       {
-        title: "Application Developer (Apprenticeship)",
+        title:
+          "Full stack Web developer / Application Developer (Apprenticeship)",
         company: "ICON Vernetze Kommunikation GmbH",
         location: "Braunschweig, Germany",
         period: "August 2022 - July 2025",
         description:
           "Focused on web development in an agile project environment",
         responsibilities: [
-          "Working in agile project environment with the development team",
-          "Moodle development: Plugins, theme development, bug fixing, support",
-          "Frontend development: HTML, JavaScript, CSS, SCSS",
-          "Backend development: PHP, MySQL",
-          "End-user support via phone and email",
-          "Supporting and onboarding new apprentices",
-          "Tools: Jira, Confluence, Teams, Slack",
+          "Working in agile software projects and close coordination with the development team for the efficient implementation of requirements",
+          "Development and enhancement of Moodle plugins and themes, including error analysis, bug fixing and technical user support",
+          "Implementation of modern frontend features with HTML, JavaScript, CSS and SCSS",
+          "Realization of server-side functions and database connections with PHP and MySQL",
+          "Support of end customers via phone and email, including problem analysis and solution finding",
+          "Instruction, support and technical training of new apprentices",
+          "Routine work with project and communication tools such as Jira, Confluence, Teams and Slack",
         ],
       },
       {
@@ -113,12 +114,12 @@ export const en = {
         period: "December 2009 - April 2019",
         description: "Warehouse and logistics specialist",
         responsibilities: [
-          "Management of daily sales operations",
-          "Preparation and processing of orders",
-          "Customer incident resolution",
-          "Warehouse control (expiration dates and inventory management)",
-          "Inventory counts and shipping document creation",
-          "Goods receipt control, stock management, packaging",
+          "Responsibility for daily sales management and ensuring smooth day-to-day operations",
+          "Preparation, control and settlement of orders",
+          "Solution-oriented handling of customer concerns and incidents directly on site",
+          "Execution of warehouse controls, including checking expiration dates and inventories",
+          "Organization of warehouse management, execution of inventory counts and creation of relevant shipping documents",
+          "Control of incoming goods, inventory checks and proper packaging of goods",
           "Order picking according to delivery notes",
         ],
       },
@@ -131,48 +132,48 @@ export const en = {
     live: "Live",
     code: "Code / Readme",
     private: "Private Repository",
-    items: [
-      {
+    items: {
+      portfolio: {
         title: "Portfolio Website",
         description:
           "Personal portfolio website built with React, TypeScript, and Tailwind CSS. Features smooth animations, responsive design, and modern UI components.",
       },
-      {
+      moodle: {
         title: "Moodle Plugin Development",
         description:
           "Custom plugins and themes for Moodle LMS, including advanced features for building and trainings web Site of VW Finalcial Services(Trainingsportal) and bug fixes for existing modules.",
       },
-      {
+      urlaubsplaner: {
         title: "Web Application / Urlaubsplaner",
         description:
           "Full-stack web application with frontend and backend. Includes user authentication, data management, and responsive UI.",
       },
-      {
+      starWars: {
         title: "StarWars explorer",
         description:
           "Project with Angular using API queries to receive certain data. Completed during formation",
       },
-      {
+      familyPlanner: {
         title: "Family Planner",
         description:
-          "Task and event log based on Google Calendar. Customizing utilities for daily use and offering a clear and fast overview.",
+          "Task and event log based on Google Calendar. Customizing utilities for daily use and offering a clear and fast overview. Final project of the training. In use for my family.",
       },
-      {
+      padelTournaments: {
         title: "Padel Tournaments",
         description:
-          "Application created to organize small American and Mexican-style tournaments. Designed for use on mobile phones but also on the web. Local storage is local storage in the browser, without a database. If necessary, a database could be created.Totally practical and currently in use for events with friends.",
+          "Application created to organize small American and Mexican-style tournaments. Designed for use on mobile phones but also on the web. Local storage is local storage in the browser, without a database. If necessary, a database could be created. Totally practical and currently in use for events with friends.",
       },
-      {
+      aloha: {
         title: "Web Aloha Delta",
         description:
           "Full-stack vacation rental platform for my apartment. Features a custom booking engine with real-time availability, an admin dashboard for reservation management, automated email notifications via Resend, and an online guest check-in system.",
       },
-      {
+      padelUp: {
         title: "PadelUp",
         description:
           "Social platform for padel players that collects match statistics and suggests matches between players of the same level once a few results have been entered. Real-time chat and a system for verifying results between teams. Includes gamification with achievements, friend management, and different rankings to reach the top with your matches. Available in three languages: English, Spanish, and German.",
       },
-    ],
+    },
   },
   contact: {
     title: "Get In Touch",

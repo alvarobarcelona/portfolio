@@ -16,13 +16,43 @@ export default function Projects() {
 
   const projectMetadata = [
     {
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "Vercel"],
-      github: "https://github.com/alvarobarcelona/portfolio",
-      live: "#",
-      date: "Last update: 10/01/2026",
+      id: 'padelUp',
+      technologies: [
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS",
+        "Vite",
+        "Supabase",
+        "Google AI Studio",
+        "Resend",
+        
+      ],
+      github: "https://github.com/alvarobarcelona/PadelUp",
+      live: "https://padel-up-nine.vercel.app/",
       isPrivate: false,
     },
     {
+      id: 'aloha',
+      technologies: [
+        "Next.js 15",
+        "TypeScript",
+        "Tailwind CSS",
+        "PostgreSQL, Cron (Vercel)",
+        "Resend API"
+      ],
+      github: "https://github.com/alvarobarcelona/Web-AlohaDelta",
+      live: "https://www.apartamentoalohadelta.com/",
+      isPrivate: true,
+    },
+    {
+      id: 'portfolio',
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "Vercel"],
+      github: "https://github.com/alvarobarcelona/portfolio",
+      live: "#",
+      isPrivate: false,
+    },
+    {
+      id: 'moodle',
       technologies: [
         "PHP",
         "MySQL",
@@ -36,18 +66,19 @@ export default function Projects() {
       isPrivate: true,
     },
     {
+      id: 'urlaubsplaner',
       technologies: ["PHP", "JS", "Tailwind CSS", "MySQL", "HTML"],
       github: "https://github.com/alvarobarcelona/urlaubsplaner",
-      date: "Last update: 10/06/2025",
       isPrivate: false,
     },
     {
+      id: 'starWars',
       technologies: ["Angular", "TypeScript", "CSS", "HTML"],
       github: "https://github.com/alvarobarcelona/starWarsExplorer",
-      date: "Last update: 10/05/2025",
       isPrivate: false,
     },
     {
+      id: 'familyPlanner',
       technologies: [
         "React",
         "TypeScript",
@@ -57,10 +88,10 @@ export default function Projects() {
       ],
       github: "https://github.com/alvarobarcelona/family-planner",
       live: "https://family-planner-tau.vercel.app/",
-      date: "Last update: 06/01/2026",
       isPrivate: false,
     },
     {
+      id: 'padelTournaments',
       technologies: [
         "JavaScript",
         "Tailwind",
@@ -68,39 +99,14 @@ export default function Projects() {
         "CSS",
       ],
       github: "https://github.com/alvarobarcelona/Padel-Tournaments",
-      date: "Last update: 05/01/2026",
       isPrivate: true,
     },
-    {
-      technologies: [
-        "Next.js 15",
-        "TypeScript",
-        "Tailwind CSS",
-        "PostgreSQL, Cron (Vercel)",
-        "Resend API"
-      ],
-      github: "https://github.com/alvarobarcelona/Web-AlohaDelta",
-      live: "https://www.apartamentoalohadelta.com/",
-      date: "Last update: 10/01/2026",
-      isPrivate: true,
-    },
-    {
-      technologies: [
-        "React 19",
-        "TypeScript",
-        "Tailwind CSS",
-        "Vite",
-        "Supabase"
-      ],
-      github: "https://github.com/alvarobarcelona/PadelUp",
-      live: "https://padel-up-nine.vercel.app/",
-      date: "Last update: 28/12/2025",
-      isPrivate: false,
-    }
+ 
+  
   ];
 
-  const projects = projectMetadata.map((meta, index) => {
-    const translatedItem = translations[language].projects.items[index];
+  const projects = projectMetadata.map((meta) => {
+    const translatedItem = translations[language].projects.items[meta.id as keyof typeof translations['en']['projects']['items']];
     return {
       ...meta,
       title: translatedItem.title,
@@ -174,7 +180,7 @@ export default function Projects() {
                     )}
                   </div>
                 </CardContent>
-                <CardDate>{project.date}</CardDate>
+
               </Card>
             ))}
           </div>

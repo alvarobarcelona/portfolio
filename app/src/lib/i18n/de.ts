@@ -75,19 +75,19 @@ export const de = {
     responsibilities: "Hauptverantwortlichkeiten:",
     items: [
       {
-        title: "Anwendungsentwickler (Ausbildung)",
+        title: "Full stack Web developer /Anwendungsentwickler (Ausbildung)",
         company: "ICON Vernetze Kommunikation GmbH",
         location: "Braunschweig, Deutschland",
         period: "August 2022 - Juli 2025",
         description: "Fokus auf Webentwicklung in einem agilen Projektumfeld",
         responsibilities: [
-          "Arbeit im agilen Projektumfeld mit dem Entwicklungsteam",
-          "Moodle-Entwicklung: Plugins, Theme-Entwicklung, Bugfixing, Support",
-          "Frontend-Entwicklung: HTML, JavaScript, CSS, SCSS",
-          "Backend-Entwicklung: PHP, MySQL",
-          "Endanwender-Support per Telefon und E-Mail",
-          "Unterstützung und Onboarding neuer Auszubildender",
-          "Tools: Jira, Confluence, Teams, Slack",
+          "Mitarbeit in agilen Softwareprojekten und enge Abstimmung mit dem Entwicklerteam zur effizienten Umsetzung von Anforderungen",
+          "Entwicklung und Weiterentwicklung von Moodle Plugins und Themes, inklusive Fehleranalyse, Bugfixing und technischem Anwendersupport",
+          "Umsetzung moderner Frontend Features mit HTML, JavaScript, CSS und SCSS",
+          "Realisierung serverseitiger Funktionen und Datenbankanbindungen mit PHP und MySQL",
+          "Betreuung von Endkund*innen über Telefon und E Mail, inklusive Problemanalyse und Lösungsfindung",
+          "Anleitung, Betreuung und fachliche Einarbeitung neuer Auszubildender",
+          "Routiniertes Arbeiten mit Projekt  und Kommunikationstools wie Jira, Confluence, Teams und Slack",
         ],
       },
       {
@@ -111,13 +111,13 @@ export const de = {
         period: "Dezember 2009 - April 2019",
         description: "Lager- und Logistikspezialist",
         responsibilities: [
-          "Management des täglichen Verkaufsbetriebs",
-          "Vorbereitung und Bearbeitung von Bestellungen",
-          "Lösung von Kundenanliegen",
-          "Lagerkontrolle (Verfallsdaten und Bestandsmanagement)",
-          "Inventuren und Erstellung von Versanddokumenten",
-          "Wareneingangskontrolle, Bestandsmanagement, Verpackung",
-          "Kommissionierung nach Lieferscheinen",
+          "Verantwortung für das tägliche Umsatzmanagement sowie Sicherstellung reibungsloser Abläufe im Tagesgeschäft",
+          "Vorbereitung, Kontrolle und Abrechnung von Bestellungen",
+          "Lösungsorientierte Bearbeitung von Kundenanliegen und Vorfällen direkt vor Ort",
+          "Durchführung von Lagerkontrollen, einschließlich Überprüfung von Verfallsdaten und Warenbeständen",
+          "Organisation der Lagerwirtschaft, Durchführung von Inventurzählungen und Erstellung relevanter Versanddokumente",
+          "Kontrolle des Wareneingangs, Bestandsprüfungen sowie fachgerechtes Verpacken von Waren",
+          "Kommissionierung von Waren anhand von Lieferscheinen",
         ],
       },
     ],
@@ -129,48 +129,48 @@ export const de = {
     live: "Live",
     code: "Code / Readme",
     private: "Privates Repository",
-    items: [
-      {
+    items: {
+      portfolio: {
         title: "Portfolio Website",
         description:
           "Persönliche Portfolio-Website erstellt mit React, TypeScript und Tailwind CSS. Bietet flüssige Animationen, responsives Design und moderne UI-Komponenten.",
       },
-      {
+      moodle: {
         title: "Moodle Plugin Entwicklung",
         description:
           "Benutzerdefinierte Plugins und Themes für Moodle LMS, einschließlich erweiterter Funktionen für den Aufbau und Trainings-Websites von VW Financial Services (Trainingsportal) sowie Fehlerbehebungen für bestehende Module.",
       },
-      {
+      urlaubsplaner: {
         title: "Web Applikation / Urlaubsplaner",
         description:
-          "Full-Stack-Webanwendung mit Frontend und Backend. Beinhaltet Benutzerauthentifizierung, Datenmanagement und responsives UI.",
+          "Full-Stack-Webanwendung mit Frontend und Backend. Beinhaltet Benutzerauthentifizierung, Datenmanagement und responsives UI. Abschlusprojekt der Ausbildung.",
       },
-      {
+      starWars: {
         title: "StarWars Explorer",
         description:
           "Projekt mit Angular, das API-Abfragen nutzt, um bestimmte Daten zu empfangen. Abgeschlossen während der Ausbildung.",
       },
-      {
+      familyPlanner: {
         title: "Family Planner",
         description:
-          "Aufgaben- und Ereignisprotokoll basierend auf Google Calendar. Anpassungsmöglichkeiten für den täglichen Gebrauch und bietet einen klaren und schnellen Überblick.",
+          "Aufgaben- und Ereignisprotokoll basierend auf Google Calendar. Anpassungsmöglichkeiten für den täglichen Gebrauch und bietet einen klaren und schnellen Überblick. In Benutzung für meine Familie.",
       },
-      {
+      padelTournaments: {
         title: "Padel Turniere",
         description:
           "Anwendung zur Organisation kleiner Turniere im amerikanischen und mexikanischen Stil. Entwickelt für die Nutzung auf Mobiltelefonen, aber auch im Web. Lokaler Speicher befindet sich im Browser, ohne Datenbank. Bei Bedarf könnte eine Datenbank erstellt werden. Völlig praxisnah und derzeit für Events mit Freunden im Einsatz.",
       },
-      {
+      aloha: {
         title: "Web Aloha Delta",
         description:
           "Full-Stack-Ferienvermietungsplattform für mein Apartment. Bietet eine benutzerdefinierte Buchungsmaschine mit Echtzeit-Verfügbarkeit, ein Admin-Dashboard für das Reservierungsmanagement, automatisierte E-Mail-Benachrichtigungen über Resend und ein Online-Gäste-Check-in-System.",
       },
-      {
+      padelUp: {
         title: "PadelUp",
         description:
           "Soziale Plattform für Padel-Spieler, die Spielstatistiken sammelt und Spiele zwischen Spielern gleichen Niveaus vorschlägt, sobald einige Ergebnisse eingegeben wurden. Echtzeit-Chat und ein System zur Überprüfung von Ergebnissen zwischen Teams. Beinhaltet Gamification mit Erfolgen, Freundesmanagement und verschiedene Ranglisten, um mit deinen Spielen die Spitze zu erreichen. Verfügbar in drei Sprachen: Englisch, Spanisch und Deutsch.",
       },
-    ],
+    },
   },
   contact: {
     title: "Kontakt",
