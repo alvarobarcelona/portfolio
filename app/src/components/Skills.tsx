@@ -1,23 +1,22 @@
 import { Card, CardContent } from "@/components/ui/card";
+import SpotlightCard from "@/components/SpotlightCard";
 import { useLanguage } from "@/contexts/LanguageContext";
+import {
+  Code2,
+  Server,
+  Wrench,
+  Languages,
+  Layout,
+  Cpu
+} from "lucide-react";
 
 export default function Skills() {
   const { t } = useLanguage();
 
-  const getLevelKey = (level: string) => {
-    switch (level) {
-      case "Advanced": return "advanced";
-      case "Native": return "advanced";
-      case "Intermediate": return "intermediate";
-      case "Working Knowledge": return "working";
-      default: return "working";
-    }
-  };
-
-  // We keep the structure but fetch titles and levels via t()
   const skillCategories = [
     {
       title: t('skills.categories.frontend'),
+      icon: <Layout className="w-6 h-6 text-primary" />,
       skills: [
         { name: "JavaScript", level: t('skills.legend.intermediate') },
         { name: "React", level: t('skills.legend.intermediate') },
@@ -30,6 +29,7 @@ export default function Skills() {
     },
     {
       title: t('skills.categories.backend'),
+      icon: <Server className="w-6 h-6 text-primary" />,
       skills: [
         { name: "PHP", level: t('skills.legend.advanced') },
         { name: "MySQL", level: t('skills.legend.advanced') },
@@ -41,6 +41,7 @@ export default function Skills() {
     },
     {
       title: t('skills.categories.tools'),
+      icon: <Wrench className="w-6 h-6 text-primary" />,
       skills: [
         { name: "Git", level: t('skills.legend.intermediate') },
         { name: "Jira", level: t('skills.legend.advanced') },
@@ -63,6 +64,7 @@ export default function Skills() {
     },
     {
       title: t('skills.categories.languages'),
+      icon: <Languages className="w-6 h-6 text-primary" />,
       skills: [
         { name: "German", level: t('skills.legend.intermediate') },
         { name: "English", level: t('skills.legend.intermediate') },
@@ -73,28 +75,21 @@ export default function Skills() {
   ];
 
   const getLevelColor = (level: string) => {
-    // We check against translated strings
-    // But better usage would be to use the keys. 
-    // For now, let's reverse match or check if the level *contains* the key words or matches the translated value of 'advanced' etc.
-    // However, simplest is to check against the translated values since they are unique enough.
     const advanced = t('skills.legend.advanced');
     const intermediate = t('skills.legend.intermediate');
     const working = t('skills.legend.working');
 
-    // Note: The "Languages" category uses "Native" which maps to "Advanced / Native" in translation
-
     if (level === advanced) {
-      return "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20";
+      return "bg-emerald-100/50 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20";
     }
     if (level === intermediate) {
-      return "bg-blue-100 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 border border-blue-200 dark:border-blue-500/20";
+      return "bg-blue-100/50 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 border border-blue-200 dark:border-blue-500/20";
     }
     if (level === working) {
-      return "bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400 border border-amber-200 dark:border-amber-500/20";
+      return "bg-amber-100/50 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400 border border-amber-200 dark:border-amber-500/20";
     }
     return "bg-muted text-muted-foreground border border-border";
   };
-
 
   const legendItems = [
     { label: t('skills.legend.advanced'), color: "bg-emerald-500" },
@@ -103,21 +98,22 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-24">
+    <section id="skills" className="py-24 bg-secondary/5">
       <div className="container">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold">
+            <h2 className="text-4xl md:text-5xl font-bold flex items-center justify-center gap-3">
+              <Code2 className="w-10 h-10 text-primary animate-pulse" />
               {t('skills.title')}
             </h2>
             <p className="text-muted-foreground text-lg">
               {t('skills.subtitle')}
             </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm">
+            <div className="flex flex-wrap justify-center gap-4 text-sm mt-4">
               {legendItems.map((item, index) => (
-                <div key={index} className="flex items-center gap-2">
+                <div key={index} className="flex items-center gap-2 px-3 py-1 rounded-full bg-background border border-border/50 shadow-sm">
                   <span className={`w-3 h-3 rounded-full ${item.color.split(' ')[0]}`} />
-                  <span className="text-muted-foreground">{item.label}</span>
+                  <span className="text-muted-foreground font-medium">{item.label}</span>
                 </div>
               ))}
             </div>
@@ -125,30 +121,35 @@ export default function Skills() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {skillCategories.map((category, index) => (
-              <Card key={index} className="border-border/50 bg-card/50">
-                <CardContent className="pt-6 space-y-4">
-                  <h3 className="text-xl font-semibold text-primary">
-                    {category.title}
-                  </h3>
+              <SpotlightCard key={index} className="border-border/50 bg-card/50 hover:bg-card transition-all duration-300 hover:shadow-lg group">
+                <CardContent className="pt-6 space-y-6">
+                  <div className="flex items-center gap-3 border-b border-border/50 pb-4">
+                    <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                      {category.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground">
+                      {category.title}
+                    </h3>
+                  </div>
                   <div className="flex flex-wrap gap-2">
                     {category.skills.map((skill, skillIndex) => (
                       <div
                         key={skillIndex}
-                        className={`px-3 py-1.5 rounded-md text-sm font-medium ${getLevelColor(skill.level)}`}
+                        className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 hover:scale-105 cursor-default ${getLevelColor(skill.level)}`}
                       >
                         {skill.name}
                       </div>
                     ))}
                   </div>
                 </CardContent>
-              </Card>
+              </SpotlightCard>
             ))}
           </div>
 
           <div className="text-center">
             <p className="text-sm text-muted-foreground">
               {t('skills.learning')}{" "}
-              <span className="text-foreground font-medium">
+              <span className="text-foreground font-medium bg-primary/10 px-2 py-0.5 rounded">
                 React 19, TypeScript, Next.js, Node.js
               </span>
             </p>

@@ -6,6 +6,7 @@ export const de = {
       "Webentwickler mit solidem Fundament in Backend- und Webtechnologien, der seine Fähigkeiten in modernen, komponentenbasierten Frontend-Frameworks wie React und TypeScript kontinuierlich weiterentwickelt.",
     getInTouch: "Kontakt aufnehmen",
     viewProjects: "Projekte ansehen",
+    scrollAbout: "Zur Über mich Sektion scrollen",
   },
   about: {
     title: "Über mich",
@@ -26,7 +27,7 @@ export const de = {
     p4: "Mein Hintergrund umfasst mehr als nur Code. Mit über einem Jahrzehnt Erfahrung in",
     p4_span: "Logistikmanagement und Startup-Operations",
     p4_end:
-      'bringe ich eine einzigartige "Business-First"-Perspektive in die Entwicklung ein. Ich verstehe, dass Code Mittel zum Zweck ist: Probleme effizient lösen, Workflows optimieren und Mehrwert für Nutzer schaffen.',
+      ' bringe ich eine einzigartige "Business-First"-Perspektive in die Entwicklung ein. Ich verstehe, dass Code Mittel zum Zweck ist: Probleme effizient lösen, Workflows optimieren und Mehrwert für Nutzer schaffen.',
     p5: "Ich begrüße die Zukunft des Programmierens, indem ich",
     p5_span: "Künstliche Intelligenz",
     p5_end:
@@ -191,5 +192,10 @@ export const de = {
   footer: {
     rights: "Alle Rechte vorbehalten.",
     builtWith: "Erstellt mit React, TypeScript & Tailwind CSS",
+  },
+  whatsapp: {
+    tooltip: "Chat auf WhatsApp",
+    message:
+      "Hallo, ich habe dein Portfolio gesehen und würde gerne mit dir chatten!",
   },
 };

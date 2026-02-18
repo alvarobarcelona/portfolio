@@ -6,6 +6,7 @@ export const en = {
       "Web Developer with a solid foundation in backend and web technologies, continuously developing skills in modern, component-based frontend frameworks such as React and TypeScript.",
     getInTouch: "Get in Touch",
     viewProjects: "View Projects",
+    scrollAbout: "Scroll to About Me section",
   },
   about: {
     title: "About Me",
@@ -193,5 +194,9 @@ export const en = {
   footer: {
     rights: "All rights reserved.",
     builtWith: "Built with React, TypeScript & Tailwind CSS",
+  },
+  whatsapp: {
+    tooltip: "Chat on WhatsApp",
+    message: "Hi, I saw your portfolio and would like to chat!",
   },
 };

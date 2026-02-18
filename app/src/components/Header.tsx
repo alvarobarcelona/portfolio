@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import LanguageSwitch from "./LanguageSwitch";
+import { ThemeToggle } from "./ThemeToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Header() {
@@ -61,10 +62,12 @@ export default function Header() {
               </button>
             ))}
             <LanguageSwitch />
+            <ThemeToggle />
           </div>
 
           <div className="flex items-center gap-2 md:hidden">
             <LanguageSwitch />
+            <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"

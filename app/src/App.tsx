@@ -6,6 +6,8 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import WhatsAppButton from "./components/WhatsAppButton";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 function Router() {
@@ -23,11 +25,11 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="dark"
-      >
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
         <LanguageProvider>
           <TooltipProvider>
+            <WhatsAppButton />
+            <ScrollToTop />
             <Toaster />
             <Router />
           </TooltipProvider>

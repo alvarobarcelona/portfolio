@@ -6,6 +6,7 @@ import {
   CardTitle,
   CardDate,
 } from "@/components/ui/card";
+import SpotlightCard from "@/components/SpotlightCard";
 import { Button } from "@/components/ui/button";
 import { Github, Calendar, ExternalLink, Lock } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -25,7 +26,7 @@ export default function Projects() {
         "Supabase",
         "Google AI Studio",
         "Resend",
-        
+
       ],
       github: "https://github.com/alvarobarcelona/PadelUp",
       live: "https://padel-up-nine.vercel.app/",
@@ -101,8 +102,8 @@ export default function Projects() {
       github: "https://github.com/alvarobarcelona/Padel-Tournaments",
       isPrivate: true,
     },
- 
-  
+
+
   ];
 
   const projects = projectMetadata.map((meta) => {
@@ -127,7 +128,7 @@ export default function Projects() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
-              <Card
+              <SpotlightCard
                 key={index}
                 className="border-border/50 bg-card/50 hover:bg-card transition-colors flex flex-col"
               >
@@ -137,51 +138,52 @@ export default function Projects() {
                     {project.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="flex-1 flex flex-col justify-between space-y-4">
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-2 py-1 text-xs font-medium rounded-md bg-primary/10 text-primary"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    {project.isPrivate ? (
-                      <Button variant="outline" size="sm" disabled>
-                        <Lock className="h-4 w-4 mr-2" />
-                        {t('projects.private')}
-                      </Button>
-                    ) : (
-                      <Button variant="outline" size="sm" asChild>
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                <CardContent className="flex-1 flex flex-col">
+                  <div className="mt-auto flex flex-col gap-4">
+                    <div className="flex flex-wrap mt-4 gap-2">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="px-2 py-1 text-xs font-medium rounded-md bg-primary/10 text-primary"
                         >
-                          <Github className="h-4 w-4 mr-2" />
-                          {t('projects.code')}
-                        </a>
-                      </Button>
-                    )}
-                    {project.live && (
-                      <Button variant="outline" size="sm" asChild>
-                        <a
-                          href={project.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <ExternalLink className="h-4 w-4 mr-2" />
-                          {t('projects.live')}
-                        </a>
-                      </Button>
-                    )}
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex items-center gap-3">
+                      {project.isPrivate ? (
+                        <Button variant="outline" size="sm" disabled>
+                          <Lock className="h-4 w-4 mr-2" />
+                          {t('projects.private')}
+                        </Button>
+                      ) : (
+                        <Button variant="outline" size="sm" asChild>
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Github className="h-4 w-4 mr-2" />
+                            {t('projects.code')}
+                          </a>
+                        </Button>
+                      )}
+                      {project.live && (
+                        <Button variant="outline" size="sm" asChild>
+                          <a
+                            href={project.live}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink className="h-4 w-4 mr-2" />
+                            {t('projects.live')}
+                          </a>
+                        </Button>
+                      )}
+                    </div>
                   </div>
                 </CardContent>
-
-              </Card>
+              </SpotlightCard>
             ))}
           </div>
 
