@@ -1,9 +1,9 @@
 export const de = {
   hero: {
     greeting: "Hallo, ich bin",
-    role: "Junior / Mid Full Stack Developer",
+    role: "Junior Full Stack Developer mit 3 Jahren Backend-Erfahrung",
     description:
-      "Webentwickler mit solidem Fundament in Backend- und Webtechnologien, der seine Fähigkeiten in modernen, komponentenbasierten Frontend-Frameworks wie React und TypeScript kontinuierlich weiterentwickelt.",
+      "Fokus auf skalierbare Webanwendungen mit React, Node.js und PostgreSQL. Erfahrung in produktiver PHP-Backend-Entwicklung.",
     getInTouch: "Kontakt aufnehmen",
     viewProjects: "Projekte ansehen",
     scrollAbout: "Zur Über mich Sektion scrollen",
@@ -11,30 +11,7 @@ export const de = {
   about: {
     title: "Über mich",
     subtitle: "Erfahren Sie mehr über meinen Hintergrund und meine Expertise",
-    p1: "Ich bin ein leidenschaftlicher Webentwickler mit solidem Fundament in Frontend- und Backend-Technologien. Meine Reise in der Softwareentwicklung begann mit einer professionellen Ausbildung zum",
-    p1_span: "Fachinformatiker für Anwendungsentwicklung",
-    p1_end: ", in der ich mich auf Webentwicklung spezialisiert habe.",
-    p2: "Im Laufe meiner Karriere habe ich intensiv mit Webtechnologien gearbeitet",
-    p2_span: "(JavaScript, PHP, HTML, CSS und MySQL)",
-    p2_middle: "und lerne nun durch praktische Anwendung",
-    p2_span2: "React, TypeScript und Node.js",
-    p2_end:
-      ". Ich verfüge über praktische Erfahrung in agilen Projektumgebungen, der Entwicklung von Moodle-Plugins, dem Aufbau responsiver Frontends und der technischen Unterstützung von Endbenutzern.",
-    p3: "Aktuell erweitere ich meine Expertise im",
-    p3_span: "React-Ökosystem",
-    p3_end:
-      "und modernen Entwicklungspraktiken. Ich spreche fließend Deutsch (B2 zertifiziert), Englisch, Spanisch und Katalanisch, was es mir ermöglicht, effektiv in internationalen Teams zu arbeiten und mit verschiedensten Stakeholdern zu kommunizieren.",
-    p4: "Mein Hintergrund umfasst mehr als nur Code. Mit über einem Jahrzehnt Erfahrung in",
-    p4_span: "Logistikmanagement und Startup-Operations",
-    p4_end:
-      ' bringe ich eine einzigartige "Business-First"-Perspektive in die Entwicklung ein. Ich verstehe, dass Code Mittel zum Zweck ist: Probleme effizient lösen, Workflows optimieren und Mehrwert für Nutzer schaffen.',
-    p5: "Ich begrüße die Zukunft des Programmierens, indem ich",
-    p5_span: "Künstliche Intelligenz",
-    p5_end:
-      'in meinen täglichen Arbeitsablauf integriere. Ich "generiere" nicht einfach Code; ich nutze KI als leistungsstarkes Exoskelett, um das Grundgerüst schneller zu erstellen, komplexe Logik zu debuggen und Ideen in Rekordgeschwindigkeit als Prototypen umzusetzen. Dies ermöglicht es mir, meine menschliche Energie auf das Wesentliche zu konzentrieren:',
-    p5_span2:
-      "Systemarchitektur, User Experience und das Lösen komplexer logischer Rätsel.",
-    p5_final: "Ich bin der Pilot, und KI ist mein Co-Pilot.",
+    p1: "Ich bin ausgebildeter Fachinformatiker für Anwendungsentwicklung mit 3 Jahren praktischer Erfahrung in der Backend-Entwicklung (PHP, MySQL) und agilen Projektumgebungen. Während meiner Ausbildung war ich an der Entwicklung und Wartung von Moodle-Plugins beteiligt, habe responsive Frontends umgesetzt und Endanwender technisch unterstützt.Aktuell spezialisiere ich mich auf moderne Webtechnologien wie React, TypeScript und Node.js und entwickle eigenständig Full-Stack-Anwendungen mit Fokus auf skalierbare Architekturen und saubere Code-Strukturen. Neben meiner technischen Erfahrung bringe ich ein starkes betriebswirtschaftliches Verständnis aus früheren Tätigkeiten im Logistik- und Startup-Umfeld mit und denke Software stets aus einer Business-Perspektive: Lösungen sollen Prozesse vereinfachen und echten Mehrwert schaffen. Aktuell beschäftige ich mich zusätzlich mit der Integration von KI-APIs in Webanwendungen.",
     highlights: {
       fullstack: {
         title: "Full Stack Fokus",
@@ -61,6 +38,7 @@ export const de = {
       frontend: "Frontend",
       backend: "Backend",
       tools: "Tools & Sonstiges",
+      ai: "KI & Maschinelles Lernen",
       languages: "Sprachen",
     },
     legend: {
@@ -68,7 +46,7 @@ export const de = {
       intermediate: "Mittelstufe",
       working: "Grundkenntnisse",
     },
-    learning: "Aktuell am lernen:",
+    learning: "Aktuell im Fokus:",
   },
   experience: {
     title: "Berufserfahrung",

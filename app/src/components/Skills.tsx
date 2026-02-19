@@ -24,7 +24,7 @@ export default function Skills() {
         { name: "HTML5", level: t('skills.legend.advanced') },
         { name: "CSS3 / SCSS", level: t('skills.legend.advanced') },
         { name: "Tailwind CSS", level: t('skills.legend.intermediate') },
-        { name: "Next.js", level: t('skills.legend.working') },
+        /* { name: "Next.js", level: t('skills.legend.working') }, */
       ],
     },
     {
@@ -34,8 +34,6 @@ export default function Skills() {
         { name: "PHP", level: t('skills.legend.advanced') },
         { name: "MySQL", level: t('skills.legend.advanced') },
         { name: "PostgreSQL", level: t('skills.legend.intermediate') },
-        { name: "Supabase", level: t('skills.legend.intermediate') },
-        { name: "Neon", level: t('skills.legend.working') },
         { name: "Node.js", level: t('skills.legend.working') },
       ],
     },
@@ -45,21 +43,31 @@ export default function Skills() {
       skills: [
         { name: "Git", level: t('skills.legend.intermediate') },
         { name: "Jira", level: t('skills.legend.advanced') },
+        { name: "GitHub Actions", level: t('skills.legend.working') },
         { name: "Moodle Development", level: t('skills.legend.advanced') },
+        { name: "Docker", level: t('skills.legend.intermediate') },
         { name: "Agile Methodologies", level: t('skills.legend.advanced') },
         { name: "REST APIs", level: t('skills.legend.intermediate') },
         { name: "Slack", level: t('skills.legend.intermediate') },
+        { name: "Supabase", level: t('skills.legend.intermediate') },
+        { name: "Neon", level: t('skills.legend.working') },
         { name: "Microsoft Teams", level: t('skills.legend.intermediate') },
         { name: "Visual Studio Code", level: t('skills.legend.intermediate') },
         { name: "Antigravity", level: t('skills.legend.intermediate') },
-        { name: "GitHub Actions", level: t('skills.legend.working') },
         { name: "Vercel", level: t('skills.legend.intermediate') },
         { name: "Render", level: t('skills.legend.working') },
         { name: "Resend API", level: t('skills.legend.working') },
         { name: "Cron Jobs", level: t('skills.legend.working') },
+      ],
+    },
+    {
+      title: t('skills.categories.ai'),
+      icon: <Cpu className="w-6 h-6 text-primary" />,
+      skills: [
         { name: "Google AI Studio", level: t('skills.legend.working') },
         { name: "Chat GPT", level: t('skills.legend.intermediate') },
         { name: "Gemini Pro", level: t('skills.legend.intermediate') },
+        { name: "AI API Integration in Web Applications", level: t('skills.legend.intermediate') },
       ],
     },
     {
@@ -150,7 +158,7 @@ export default function Skills() {
             <p className="text-sm text-muted-foreground">
               {t('skills.learning')}{" "}
               <span className="text-foreground font-medium bg-primary/10 px-2 py-0.5 rounded">
-                React 19, TypeScript, Next.js, Node.js
+                React 19, TypeScript, Node.js
               </span>
             </p>
           </div>

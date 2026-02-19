@@ -1,9 +1,9 @@
 export const en = {
   hero: {
     greeting: "Hi, I'm",
-    role: "Junior / Mid Full Stack Developer",
+    role: "Junior Full Stack Developer with 3 years of backend experience",
     description:
-      "Web Developer with a solid foundation in backend and web technologies, continuously developing skills in modern, component-based frontend frameworks such as React and TypeScript.",
+      "Focus on scalable web applications with React, Node.js and PostgreSQL. Experience in productive PHP backend development.",
     getInTouch: "Get in Touch",
     viewProjects: "View Projects",
     scrollAbout: "Scroll to About Me section",
@@ -11,31 +11,7 @@ export const en = {
   about: {
     title: "About Me",
     subtitle: "Get to know more about my background and expertise",
-    p1: "I'm a passionate web developer with a solid foundation in both frontend and backend technologies. My journey in software development began with a professional training as an",
-    p1_span:
-      "Application Developer (Fachinformatiker für Anwendungsentwicklung)",
-    p1_end: ", where I specialized in web development.",
-    p2: "Throughout my career, I've worked extensively with web technologies",
-    p2_span: "(JavaScript, PHP, HTML, CSS and MySQL)",
-    p2_middle: "and now learning by doing",
-    p2_span2: "React, TypeScript and Node.js",
-    p2_end:
-      ". I have hands-on experience in agile project environments, developing Moodle plugins, building responsive frontends, and providing technical support to end users.",
-    p3: "Currently, I'm expanding my expertise in the",
-    p3_span: "React ecosystem",
-    p3_end:
-      "and modern development practices. I'm fluent in German (B2 certified), English, Spanish, and Catalan, which enables me to work effectively in international teams and communicate with diverse stakeholders.",
-    p4: "My background involves more than just code. With over a decade of experience in",
-    p4_span: "logistics management and startup operations",
-    p4_end:
-      ', I bring a unique "business-first" perspective to development. I understand that code is a means to an end: solving efficient problems, optimizing workflows, and delivering value to users.',
-    p5: "I embrace the future of coding by integrating",
-    p5_span: "Artificial Intelligence",
-    p5_end:
-      'into my daily workflow. I don\'t just "generate" code; I use AI as a powerful exoskeleton to accelerate scaffolding, debug complex logic, and prototype ideas at record speed. This allows me to focus my human energy on what matters most:',
-    p5_span2:
-      "System Architecture, User Experience, and solving high-level logic puzzles.",
-    p5_final: "I am a pilot, and AI is my co-pilot.",
+    p1: "I am a trained Application Developer (Fachinformatiker für Anwendungsentwicklung) with 3 years of practical experience in backend development (PHP, MySQL) and agile project environments. During my apprenticeship, I was involved in the development and maintenance of Moodle plugins, implemented responsive frontends, and provided technical support to end users. Currently, I am specializing in modern web technologies such as React, TypeScript, and Node.js, independently developing full-stack applications with a focus on scalable architectures and clean code structures. In addition to my technical experience, I bring a strong business understanding from previous roles in the logistics and startup sectors and always approach software from a business perspective: solutions should simplify processes and create real added value. I am currently also working on integrating AI APIs into web applications.",
     highlights: {
       fullstack: {
         title: "Full Stack Focus",
@@ -62,6 +38,7 @@ export const en = {
       frontend: "Frontend",
       backend: "Backend",
       tools: "Tools & Others",
+      ai: "AI & Machine Learning",
       languages: "Languages",
     },
     legend: {
@@ -69,7 +46,7 @@ export const en = {
       intermediate: "Intermediate",
       working: "Working Knowledge",
     },
-    learning: "Currently learning:",
+    learning: "Current Focus:",
   },
   experience: {
     title: "Work Experience",

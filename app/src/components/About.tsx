@@ -42,39 +42,6 @@ export default function About() {
           <div className="prose prose-invert max-w-none">
             <p className="text-lg text-muted-foreground leading-relaxed">
               {t('about.p1')}{" "}
-              <span className="text-foreground font-medium">
-                {t('about.p1_span')}
-              </span>
-              {t('about.p1_end')}
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              {t('about.p2')}{" "}
-              <span className="text-foreground font-medium">
-                {t('about.p2_span')}
-              </span>{" "}
-              {t('about.p2_middle')}{" "}
-              <span className="text-foreground font-medium">
-                {" "}
-                {t('about.p2_span2')}
-              </span>
-              {t('about.p2_end')}
-            </p>
-            {""}
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              {t('about.p3')}{" "} <span className="text-foreground font-medium">{t('about.p3_span')}</span>{" "}
-              {t('about.p3_end')}
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              {t('about.p4')}{" "}
-              <span className="text-foreground font-medium">{t('about.p4_span')}</span>
-              {t('about.p4_end')}
-            </p>
-
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              {t('about.p5')}{" "} <span className="text-foreground font-medium">{t('about.p5_span')}</span>{" "}
-              {t('about.p5_end')}{" "}
-              <span className="text-foreground font-medium">{t('about.p5_span2')}</span>
-              {t('about.p5_final')}
             </p>
           </div>
 
