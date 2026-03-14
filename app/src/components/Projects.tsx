@@ -49,7 +49,7 @@ export default function Projects() {
       id: 'portfolio',
       technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "Vercel"],
       github: "https://github.com/alvarobarcelona/portfolio",
-      live: "#",
+      live: "/",
       isPrivate: false,
     },
     {

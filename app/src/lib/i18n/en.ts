@@ -1,10 +1,11 @@
 export const en = {
   hero: {
     greeting: "Hi, I'm",
-    role: "Junior Full Stack Developer with 3 years of backend experience",
+    role: "Full Stack Developer with 3 years of backend experience",
     description:
-      "Focus on scalable web applications with React, Node.js and PostgreSQL. Experience in productive PHP backend development.",
+      "Expertise in building scalable web applications with React, Node.js and PostgreSQL. Strong background in productive PHP backend development and agile environments.",
     getInTouch: "Get in Touch",
+    downloadCV: "Download CV",
     viewProjects: "View Projects",
     scrollAbout: "Scroll to About Me section",
   },
@@ -112,9 +113,9 @@ export const en = {
     private: "Private Repository",
     items: {
       portfolio: {
-        title: "Portfolio Website",
+        title: "Personal Portfolio",
         description:
-          "Personal portfolio website built with React, TypeScript, and Tailwind CSS. Features smooth animations, responsive design, and modern UI components.",
+          "High-performance portfolio built with React 19, TypeScript, and Tailwind CSS. Showcases modular architecture, dynamic internationalization, and premium UI animations.",
       },
       moodle: {
         title: "Moodle Plugin Development",

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowDown, FileText } from "lucide-react";
 import { useEffect } from "react";
 import { initHeroAnimation } from "@/lib/iniHeroAnimation";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -30,7 +30,7 @@ export default function Hero() {
         {/* efecto nieve solo para el HERO */}
         {/* <canvas id="c2"></canvas> */}
 
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+        <div className="max-w-4xl mx-auto mt-20 text-center space-y-8">
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
               {t('hero.greeting')} <span className="text-gradient">Álvaro</span>
@@ -56,6 +56,17 @@ export default function Hero() {
             >
               {t('hero.getInTouch')}
               <Mail className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              asChild
+              className="group"
+            >
+              <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+                {t('hero.downloadCV')}
+                <FileText className="ml-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+              </a>
             </Button>
             <Button
               size="lg"

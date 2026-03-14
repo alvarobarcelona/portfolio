@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, FileText } from "lucide-react";
 import LanguageSwitch from "./LanguageSwitch";
 import { ThemeToggle } from "./ThemeToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -41,13 +41,13 @@ export default function Header() {
         : "bg-transparent"
         }`}
     >
-      <nav className="container mx-auto py-4">
+      <nav className="container mx-auto py-4  ">
         <div className="flex items-center justify-between">
           <button
             onClick={() => scrollToSection("hero")}
             className="text-xl font-bold text-gradient hover:opacity-80 transition-opacity"
           >
-            Álvaro Barcelona Peralta
+            
           </button>
 
           {/* Desktop Navigation */}
@@ -63,6 +63,12 @@ export default function Header() {
             ))}
             <LanguageSwitch />
             <ThemeToggle />
+            <Button variant="outline" size="sm" asChild className="hidden lg:flex">
+              <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+                <FileText className="h-4 w-4 mr-2" />
+                {t('hero.downloadCV')}
+              </a>
+            </Button>
           </div>
 
           <div className="flex items-center gap-2 md:hidden">

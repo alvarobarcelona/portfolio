@@ -1,10 +1,11 @@
 export const de = {
   hero: {
     greeting: "Hallo, ich bin",
-    role: "Junior Full Stack Developer mit 3 Jahren Backend-Erfahrung",
+    role: "Full Stack Developer mit 3 Jahren Backend-Erfahrung",
     description:
-      "Fokus auf skalierbare Webanwendungen mit React, Node.js und PostgreSQL. Erfahrung in produktiver PHP-Backend-Entwicklung.",
+      "Expertise im Aufbau skalierbarer Webanwendungen mit React, Node.js und PostgreSQL. Fundierter Hintergrund in produktiver PHP-Backend-Entwicklung und agilen Umgebungen.",
     getInTouch: "Kontakt aufnehmen",
+    downloadCV: "CV Herunterladen",
     viewProjects: "Projekte ansehen",
     scrollAbout: "Zur Über mich Sektion scrollen",
   },
