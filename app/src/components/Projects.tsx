@@ -29,7 +29,7 @@ export default function Projects() {
 
       ],
       github: "https://github.com/alvarobarcelona/PadelUp",
-      live: "https://padel-up-nine.vercel.app/",
+      live: "https://www.padelupcommunity.com",
       isPrivate: false,
     },
     {
