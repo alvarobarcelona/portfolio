@@ -17,6 +17,13 @@ export default function Projects() {
 
   const projectMetadata = [
     {
+      id: 'Website_Frau_Ene',
+      technologies: ["Next.js 16 + React 19", "TypeScript 5", "Tailwind CSS v4", "Vite", "Supabase", "Resend", "Stripe", "Vercel", "Zod"],
+      github: "https://github.com/alvarobarcelona/web_frau_e-e",
+      live: "https://www.frauene.com",
+      isPrivate: true,
+    },
+    {
       id: 'padelUp',
       technologies: [
         "React 19",
@@ -30,7 +37,7 @@ export default function Projects() {
       ],
       github: "https://github.com/alvarobarcelona/PadelUp",
       live: "https://www.padelupcommunity.com",
-      isPrivate: false,
+      isPrivate: true,
     },
     {
       id: 'aloha',

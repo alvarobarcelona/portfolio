@@ -150,6 +150,11 @@ export const de = {
         description:
           "Soziale Plattform für Padel-Spieler, die Spielstatistiken sammelt und Spiele zwischen Spielern gleichen Niveaus vorschlägt, sobald einige Ergebnisse eingegeben wurden. Echtzeit-Chat und ein System zur Überprüfung von Ergebnissen zwischen Teams. Beinhaltet Gamification mit Erfolgen, Freundesmanagement und verschiedene Ranglisten, um mit deinen Spielen die Spitze zu erreichen. Verfügbar in drei Sprachen: Englisch, Spanisch und Deutsch.",
       },
+      Website_Frau_Ene: {
+        title: "Webseite Frau Eñe",
+        description:
+          "Frau Eñe ist eine professionelle Website, die sich an den deutschen Markt richtet und sich an Lehrerinnen und Nachhilfelehrerinnen wenden, die in Deutschland arbeiten möchten. Ihr Hauptziel ist die Konversion: der Verkauf von PDF-Leitfäden und individueller Beratungsgespräche.",
+      },
     },
   },
   contact: {

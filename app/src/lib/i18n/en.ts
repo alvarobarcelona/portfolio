@@ -152,6 +152,11 @@ export const en = {
         description:
           "Social platform for padel players that collects match statistics and suggests matches between players of the same level once a few results have been entered. Real-time chat and a system for verifying results between teams. Includes gamification with achievements, friend management, and different rankings to reach the top with your matches. Available in three languages: English, Spanish, and German.",
       },
+      Website_Frau_Ene: {
+        title: "Website Frau Eñe",
+        description:
+          "Frau Eñe is a professional website aimed at the German market and designed for teachers and tutors who wish to work in Germany. Its main objective is conversion: the sale of PDF guides and one-to-one advisory sessions.",
+      },
     },
   },
   contact: {
