@@ -64,7 +64,7 @@ export default function Header() {
             <LanguageSwitch />
             <ThemeToggle />
             <Button variant="outline" size="sm" asChild className="hidden lg:flex">
-              <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/Cv_Alvaro_Barcelona_Peralta.pdf" target="_blank" rel="noopener noreferrer">
                 <FileText className="h-4 w-4 mr-2" />
                 {t('hero.downloadCV')}
               </a>

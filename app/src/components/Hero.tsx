@@ -63,7 +63,7 @@ export default function Hero() {
               asChild
               className="group"
             >
-              <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/Cv_Alvaro_Barcelona_Peralta.pdf" target="_blank" rel="noopener noreferrer">
                 {t('hero.downloadCV')}
                 <FileText className="ml-2 h-4 w-4 group-hover:scale-110 transition-transform" />
               </a>
