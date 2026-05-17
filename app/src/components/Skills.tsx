@@ -68,6 +68,7 @@ export default function Skills() {
         { name: "Chat GPT", level: t('skills.legend.intermediate') },
         { name: "Gemini Pro", level: t('skills.legend.intermediate') },
         { name: "AI API Integration in Web Applications", level: t('skills.legend.intermediate') },
+        { name: "Claude", level: t('skills.legend.working') },
       ],
     },
     {
