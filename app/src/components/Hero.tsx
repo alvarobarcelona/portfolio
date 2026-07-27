@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Github, Linkedin, Mail, ArrowDown, FileText } from "lucide-react";
 import { useEffect } from "react";
 import { initHeroAnimation } from "@/lib/iniHeroAnimation";
@@ -31,6 +32,19 @@ export default function Hero() {
         {/* <canvas id="c2"></canvas> */}
 
         <div className="max-w-4xl mx-auto mt-20 text-center space-y-8">
+          <div className="flex justify-center">
+            <Avatar className="size-32 md:size-40 ring-4 ring-primary/20 shadow-xl">
+              <AvatarImage
+                src="/picture/profile.png"
+                alt="Álvaro Barcelona Peralta"
+                className="object-cover"
+              />
+              <AvatarFallback className="text-3xl md:text-4xl font-semibold text-primary bg-primary/10">
+                ÁB
+              </AvatarFallback>
+            </Avatar>
+          </div>
+
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
               {t('hero.greeting')} <span className="text-gradient">Álvaro</span>

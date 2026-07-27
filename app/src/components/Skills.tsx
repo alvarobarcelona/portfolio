@@ -132,7 +132,7 @@ export default function Skills() {
             {skillCategories.map((category, index) => (
               <SpotlightCard key={index} className="border-border/50 bg-card/50 hover:bg-card transition-all duration-300 hover:shadow-lg group">
                 <CardContent className="pt-6 space-y-6">
-                  <div className="flex items-center gap-3 border-b border-border/50 pb-4">
+                  <div className="flex items-center gap-3">
                     <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
                       {category.icon}
                     </div>
