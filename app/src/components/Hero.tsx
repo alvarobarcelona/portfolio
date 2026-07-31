@@ -35,9 +35,11 @@ export default function Hero() {
           <div className="flex justify-center">
             <Avatar className="size-32 md:size-40 ring-4 ring-primary/20 shadow-xl">
               <AvatarImage
-                src="/picture/profile.png"
+                src="/picture/profile_work.webp"
                 alt="Álvaro Barcelona Peralta"
                 className="object-cover"
+                loading="eager"
+                decoding="sync"
               />
               <AvatarFallback className="text-3xl md:text-4xl font-semibold text-primary bg-primary/10">
                 ÁB

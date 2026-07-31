@@ -112,7 +112,6 @@ export default function Skills() {
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold flex items-center justify-center gap-3">
-              <Code2 className="w-10 h-10 text-primary animate-pulse" />
               {t('skills.title')}
             </h2>
             <p className="text-muted-foreground text-lg">
