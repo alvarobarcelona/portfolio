@@ -7,8 +7,11 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 4px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --color-background: var(--background);
@@ -45,75 +48,86 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/*
+ * Signal — modo claro.
+ * El acento es un teal oscuro (#0D7A6B) para que el texto blanco encima
+ * pase contraste AA; el teal brillante #4FD9C4 solo funciona sobre fondo
+ * oscuro, por eso no se reutiliza aquí.
+ */
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  --radius: 1.25rem;
+  --background: #f6f7f5;
+  --foreground: #101214;
+  --card: #ffffff;
+  --card-foreground: #101214;
+  --popover: #ffffff;
+  --popover-foreground: #101214;
+  --primary: #0d7a6b;
+  --primary-foreground: #ffffff;
+  --secondary: #eceeeb;
+  --secondary-foreground: #3a4046;
+  --muted: #eceeeb;
+  --muted-foreground: #5c646d;
+  --accent: #e3e8e5;
+  --accent-foreground: #101214;
+  --destructive: #c0342f;
+  --destructive-foreground: #ffffff;
+  --border: #dde1de;
+  --input: #dde1de;
+  --ring: #0d7a6b;
+  --chart-1: #0d7a6b;
+  --chart-2: #2f9c8b;
+  --chart-3: #57bda9;
+  --chart-4: #8ad5c6;
+  --chart-5: #b9e8de;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #101214;
+  --sidebar-primary: #0d7a6b;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #eceeeb;
+  --sidebar-accent-foreground: #101214;
+  --sidebar-border: #dde1de;
+  --sidebar-ring: #0d7a6b;
 }
 
+/*
+ * Signal — modo oscuro, que es el modo por defecto de la app.
+ * --accent ya no es el color de marca: es la superficie elevada que usan
+ * los estados hover de shadcn. El acento de marca es --primary.
+ */
 .dark {
-  --primary: oklch(0.7 0.19 240);
-  --primary-foreground: oklch(0.98 0 0);
-  --sidebar-primary: oklch(0.7 0.19 240);
-  --sidebar-primary-foreground: oklch(0.98 0 0);
-  --background: oklch(24.6% 0.04083 257.793);
-  --foreground: oklch(0.92 0.01 260);
-  --card: oklch(0.17 0.015 260);
-  --card-foreground: oklch(0.92 0.01 260);
-  --popover: oklch(0.17 0.015 260);
-  --popover-foreground: oklch(0.92 0.01 260);
-  --secondary: oklch(0.22 0.02 260);
-  --secondary-foreground: oklch(0.85 0.01 260);
-  --muted: oklch(0.25 0.02 260);
-  --muted-foreground: oklch(0.65 0.015 260);
-  --accent: oklch(0.7 0.19 240);
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.6 0.22 25);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.25 0.02 260);
-  --input: oklch(0.25 0.02 260);
-  --ring: oklch(0.7 0.19 240);
-  --chart-1: oklch(0.65 0.18 240);
-  --chart-2: oklch(0.7 0.19 240);
-  --chart-3: oklch(0.6 0.17 240);
-  --chart-4: oklch(0.55 0.16 240);
-  --chart-5: oklch(0.5 0.15 240);
-  --sidebar: oklch(0.17 0.015 260);
-  --sidebar-foreground: oklch(0.92 0.01 260);
-  --sidebar-accent: oklch(0.25 0.02 260);
-  --sidebar-accent-foreground: oklch(0.98 0 0);
-  --sidebar-border: oklch(0.25 0.02 260);
-  --sidebar-ring: oklch(0.7 0.19 240);
+  --background: #0a0b0d;
+  --foreground: #e9ebee;
+  --card: #131519;
+  --card-foreground: #e9ebee;
+  --popover: #131519;
+  --popover-foreground: #e9ebee;
+  --primary: #4fd9c4;
+  --primary-foreground: #04211d;
+  --secondary: #1a1d22;
+  --secondary-foreground: #c7cdd4;
+  --muted: #1a1d22;
+  --muted-foreground: #9ba3ac;
+  --accent: #1a1d22;
+  --accent-foreground: #e9ebee;
+  --destructive: #f4666a;
+  --destructive-foreground: #0a0b0d;
+  --border: #262a30;
+  --input: #262a30;
+  --ring: #4fd9c4;
+  --chart-1: #4fd9c4;
+  --chart-2: #3cb9a8;
+  --chart-3: #2f9c8b;
+  --chart-4: #8ae6d6;
+  --chart-5: #bdf2e8;
+  --sidebar: #131519;
+  --sidebar-foreground: #e9ebee;
+  --sidebar-primary: #4fd9c4;
+  --sidebar-primary-foreground: #04211d;
+  --sidebar-accent: #1a1d22;
+  --sidebar-accent-foreground: #e9ebee;
+  --sidebar-border: #262a30;
+  --sidebar-ring: #4fd9c4;
 }
 
 @layer base {
@@ -175,13 +189,24 @@ textarea {
 }
 @layer base {
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   }
-  
-  code, pre {
-    font-family: 'Fira Code', monospace;
+
+  /* Space Grotesk solo para titulares: el tracking negativo es lo que le da
+     el aire compacto de la propuesta. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.025em;
   }
-  
+
+  code,
+  pre {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -189,7 +214,26 @@ textarea {
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-foreground;
+  }
+
+  /* Rejilla fina del fondo del hero. Se apaga en modo claro porque sobre
+     papel se lee como suciedad en vez de como estructura. */
+  .bg-grid {
+    background-image:
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px);
+    background-size: 64px 64px;
+    --grid-line: rgb(0 0 0 / 0.04);
+  }
+
+  .dark .bg-grid {
+    --grid-line: rgb(255 255 255 / 0.028);
+  }
+
+  /* Etiqueta monoespaciada de sección: "01 — SOBRE MÍ" */
+  .eyebrow {
+    @apply font-mono text-[11.5px] uppercase tracking-[0.14em] text-primary;
   }
 }
 

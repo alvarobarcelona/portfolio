@@ -15,7 +15,7 @@ export default function LanguageSwitch() {
         <Button
             variant="ghost"
             size="sm"
-            className="font-medium w-12"
+            className="font-mono w-12 rounded-full text-xs"
             onClick={() => setLanguage(languageCycle[language])}
             aria-label="Toggle Language"
         >

@@ -1,21 +1,30 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  CardDate,
-} from "@/components/ui/card";
 import SpotlightCard from "@/components/SpotlightCard";
 import { Button } from "@/components/ui/button";
-import { Github, Calendar, ExternalLink, Lock } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Github, Lock, Star } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/lib/i18n";
+
+/**
+ * El id debe existir en projects.items de los tres idiomas: si se escribe mal
+ * o se añade un proyecto sin su traducción, falla el build en vez de romperse
+ * en tiempo de ejecución.
+ */
+type ProjectId = keyof (typeof translations)["en"]["projects"]["items"];
+
+type ProjectMeta = {
+  id: ProjectId;
+  technologies: string[];
+  github?: string;
+  live?: string;
+  isPrivate: boolean;
+  /** Destaca el proyecto con una estrella junto al título. */
+  isFeatured?: boolean;
+};
 
 export default function Projects() {
   const { language, t } = useLanguage();
 
-  const projectMetadata = [
+  const projectMetadata: ProjectMeta[] = [
     {
       id: 'Website_Frau_Ene',
       technologies: ["Next.js 16 + React 19", "TypeScript 5", "Tailwind CSS v4", "Vite", "Supabase", "Resend", "Stripe", "Vercel", "Zod"],
@@ -25,6 +34,7 @@ export default function Projects() {
     },
     {
       id: 'padelUp',
+      isFeatured: true,
       technologies: [
         "React 19",
         "TypeScript",
@@ -114,7 +124,7 @@ export default function Projects() {
   ];
 
   const projects = projectMetadata.map((meta) => {
-    const translatedItem = translations[language].projects.items[meta.id as keyof typeof translations['en']['projects']['items']];
+    const translatedItem = translations[language].projects.items[meta.id];
     return {
       ...meta,
       title: translatedItem.title,
@@ -122,89 +132,146 @@ export default function Projects() {
     };
   });
 
+  // Enlaces internos (el propio portfolio es "/") no deben abrir pestaña.
+  const isExternal = (href: string) => href.startsWith("http");
+
   return (
     <section id="projects" className="py-24">
       <div className="container">
-        <div className="max-w-6xl mx-auto space-y-12">
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold">{t('projects.title')}</h2>
-            <p className="text-muted-foreground text-lg">
-              {t('projects.subtitle')}
-            </p>
+        <div className="mx-auto max-w-6xl space-y-8">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <p className="eyebrow mb-2">04 — {t("nav.projects")}</p>
+              <h2 className="text-3xl font-semibold md:text-4xl">
+                {t("projects.title")}
+              </h2>
+              <p className="mt-2 text-muted-foreground">
+                {t("projects.subtitle")}
+              </p>
+            </div>
+
+            <div className="flex flex-col items-start gap-3 sm:items-end">
+              <Button variant="outline" asChild className="rounded-full px-5">
+                <a
+                  href="https://github.com/alvarobarcelona"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github className="mr-2 h-4 w-4" />
+                  {t("projects.viewGitHub")}
+                </a>
+              </Button>
+
+              {/* Leyenda: sin esto la estrella de la tarjeta no significa nada
+                  para quien no la haya puesto. */}
+              <span className="flex items-center gap-2 font-mono text-[11.5px] text-muted-foreground">
+                <Star className="h-3.5 w-3.5 fill-primary text-primary" />
+                = {t("projects.featured")}
+              </span>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, index) => (
-              <SpotlightCard
-                key={index}
-                className="border-border/50 bg-card/50 hover:bg-card transition-colors flex flex-col"
-              >
-                <CardHeader>
-                  <CardTitle className="text-xl">{project.title}</CardTitle>
-                  <CardDescription className="text-muted-foreground">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="flex-1 flex flex-col">
-                  <div className="mt-auto flex flex-col gap-4">
-                    <div className="flex flex-wrap mt-4 gap-2">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-2 py-1 text-xs font-medium rounded-md bg-primary/10 text-primary"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="flex items-center gap-3">
-                      {project.isPrivate ? (
-                        <Button variant="outline" size="sm" disabled>
-                          <Lock className="h-4 w-4 mr-2" />
-                          {t('projects.private')}
-                        </Button>
-                      ) : (
-                        <Button variant="outline" size="sm" asChild>
-                          <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
+          <div className="grid gap-3.5 lg:grid-cols-2">
+            {projects.map((project, index) => {
+              // El destino principal de la tarjeta: la web en vivo si la hay,
+              // y si no el repositorio, siempre que no sea privado.
+              const primaryHref =
+                project.live ?? (project.isPrivate ? undefined : project.github);
+
+              return (
+                <SpotlightCard
+                  key={project.id}
+                  className="flex flex-col gap-3.5 rounded-3xl p-6"
+                  spotlightColor="rgba(79, 217, 196, 0.12)"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="mb-1.5 font-mono text-[11px] text-muted-foreground">
+                        {String(index + 1).padStart(3, "0")}
+                      </p>
+                      <div className="flex items-center gap-2">
+                        <h3 className="text-xl font-semibold">{project.title}</h3>
+                        {project.isFeatured && (
+                          <Star
+                            role="img"
+                            aria-label={t("projects.featured")}
+                            className="h-5 w-5 shrink-0 fill-primary text-primary"
                           >
-                            <Github className="h-4 w-4 mr-2" />
-                            {t('projects.code')}
-                          </a>
-                        </Button>
-                      )}
-                      {project.live && (
-                        <Button variant="outline" size="sm" asChild>
-                          <a
-                            href={project.live}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <ExternalLink className="h-4 w-4 mr-2" />
-                            {t('projects.live')}
-                          </a>
-                        </Button>
-                      )}
+                            <title>{t("projects.featured")}</title>
+                          </Star>
+                        )}
+                      </div>
                     </div>
+
+                    {primaryHref && (
+                      <a
+                        href={primaryHref}
+                        target={isExternal(primaryHref) ? "_blank" : undefined}
+                        rel={
+                          isExternal(primaryHref)
+                            ? "noopener noreferrer"
+                            : undefined
+                        }
+                        aria-label={`${project.title} — ${t("projects.live")}`}
+                        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform hover:-translate-y-0.5"
+                      >
+                        <ArrowUpRight className="h-4 w-4" />
+                      </a>
+                    )}
                   </div>
-                </CardContent>
-              </SpotlightCard>
-            ))}
-          </div>
 
-          <div className="text-center">
-            <Button variant="outline" size="lg" asChild>
-              <a
-                href="https://github.com/alvarobarcelona"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github className="h-5 w-5 mr-2" />
-                {t('projects.viewGitHub')}
-              </a>
-            </Button>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.technologies.map(tech => (
+                      <span
+                        key={tech}
+                        className="rounded-lg bg-secondary px-2.5 py-1 font-mono text-[11px] text-muted-foreground"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="mt-auto flex flex-wrap items-center gap-4 pt-1">
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target={isExternal(project.live) ? "_blank" : undefined}
+                        rel={
+                          isExternal(project.live)
+                            ? "noopener noreferrer"
+                            : undefined
+                        }
+                        className="flex items-center gap-1.5 font-mono text-[11.5px] text-primary transition-opacity hover:opacity-80"
+                      >
+                        <ExternalLink className="h-3.5 w-3.5" />
+                        {t("projects.live")}
+                      </a>
+                    )}
+
+                    {project.isPrivate ? (
+                      <span className="flex items-center gap-1.5 font-mono text-[11.5px] text-muted-foreground">
+                        <Lock className="h-3.5 w-3.5" />
+                        {t("projects.private")}
+                      </span>
+                    ) : (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 font-mono text-[11.5px] text-muted-foreground transition-colors hover:text-foreground"
+                      >
+                        <Github className="h-3.5 w-3.5" />
+                        {t("projects.code")}
+                      </a>
+                    )}
+                  </div>
+                </SpotlightCard>
+              );
+            })}
           </div>
         </div>
       </div>
