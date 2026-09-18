@@ -8,6 +8,13 @@ export const es = {
     downloadCV: "Descargar CV",
     viewProjects: "Ver Proyectos",
     scrollAbout: "Ir a la sección Sobre mí",
+    roleShort: "Full Stack Developer",
+    available: "Disponible para proyectos",
+    stats: {
+      years: "años de experiencia",
+      projects: "proyectos publicados",
+      languages: "idiomas",
+    },
   },
   about: {
     title: "Sobre mí",
@@ -111,6 +118,7 @@ export const es = {
     live: "Live",
     code: "Código / Readme",
     private: "Repositorio Privado",
+    featured: "Proyecto más completo",
     items: {
       portfolio: {
         title: "Portfolio Personal",

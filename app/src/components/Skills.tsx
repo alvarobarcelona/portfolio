@@ -1,167 +1,232 @@
-import { Card, CardContent } from "@/components/ui/card";
 import SpotlightCard from "@/components/SpotlightCard";
 import { useLanguage } from "@/contexts/LanguageContext";
-import {
-  Code2,
-  Server,
-  Wrench,
-  Languages,
-  Layout,
-  Cpu
-} from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Server, Wrench, Languages, Layout, Cpu } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+/**
+ * El nivel se guarda como clave estable, no como texto traducido.
+ * Antes se comparaba `skill.level` con `t('skills.legend.advanced')`, así que
+ * retocar una traducción rompía el color en silencio y sin fallar el build.
+ */
+type Level = "advanced" | "intermediate" | "working";
+
+const LEVEL_SEGMENTS: Record<Level, number> = {
+  advanced: 3,
+  intermediate: 2,
+  working: 1,
+};
+
+const LEVEL_LABEL_KEY: Record<Level, string> = {
+  advanced: "skills.legend.advanced",
+  intermediate: "skills.legend.intermediate",
+  working: "skills.legend.working",
+};
+
+type Skill = { name: string; level: Level };
+
+function LevelBar({ level }: { level: Level }) {
+  const filled = LEVEL_SEGMENTS[level];
+
+  return (
+    <span className="flex shrink-0 gap-[2px]">
+      {[0, 1, 2].map(index => (
+        <span
+          key={index}
+          className={cn(
+            "h-1 w-[9px] rounded-full",
+            index < filled ? "bg-primary" : "bg-border"
+          )}
+        />
+      ))}
+    </span>
+  );
+}
 
 export default function Skills() {
   const { t } = useLanguage();
 
-  const skillCategories = [
+  const skillCategories: {
+    title: string;
+    icon: LucideIcon;
+    skills: Skill[];
+  }[] = [
     {
-      title: t('skills.categories.frontend'),
-      icon: <Layout className="w-6 h-6 text-primary" />,
+      title: t("skills.categories.frontend"),
+      icon: Layout,
       skills: [
-        { name: "JavaScript", level: t('skills.legend.intermediate') },
-        { name: "React", level: t('skills.legend.intermediate') },
-        { name: "TypeScript", level: t('skills.legend.intermediate') },
-        { name: "HTML5", level: t('skills.legend.advanced') },
-        { name: "CSS3 / SCSS", level: t('skills.legend.advanced') },
-        { name: "Tailwind CSS", level: t('skills.legend.intermediate') },
-        /* { name: "Next.js", level: t('skills.legend.working') }, */
+        { name: "HTML5", level: "advanced" },
+        { name: "CSS3 / SCSS", level: "advanced" },
+        { name: "JavaScript", level: "intermediate" },
+        { name: "React", level: "intermediate" },
+        { name: "TypeScript", level: "intermediate" },
+        { name: "Tailwind CSS", level: "intermediate" },
       ],
     },
     {
-      title: t('skills.categories.backend'),
-      icon: <Server className="w-6 h-6 text-primary" />,
+      title: t("skills.categories.backend"),
+      icon: Server,
       skills: [
-        { name: "PHP", level: t('skills.legend.advanced') },
-        { name: "MySQL", level: t('skills.legend.advanced') },
-        { name: "PostgreSQL", level: t('skills.legend.intermediate') },
-        { name: "Node.js", level: t('skills.legend.working') },
+        { name: "PHP", level: "advanced" },
+        { name: "MySQL", level: "advanced" },
+        { name: "PostgreSQL", level: "intermediate" },
+        { name: "Node.js", level: "working" },
       ],
     },
     {
-      title: t('skills.categories.tools'),
-      icon: <Wrench className="w-6 h-6 text-primary" />,
+      title: t("skills.categories.ai"),
+      icon: Cpu,
       skills: [
-        { name: "Git", level: t('skills.legend.intermediate') },
-        { name: "Jira", level: t('skills.legend.advanced') },
-        { name: "GitHub Actions", level: t('skills.legend.working') },
-        { name: "Moodle Development", level: t('skills.legend.advanced') },
-        { name: "Docker", level: t('skills.legend.intermediate') },
-        { name: "Agile Methodologies", level: t('skills.legend.advanced') },
-        { name: "REST APIs", level: t('skills.legend.intermediate') },
-        { name: "Slack", level: t('skills.legend.intermediate') },
-        { name: "Supabase", level: t('skills.legend.intermediate') },
-        { name: "Neon", level: t('skills.legend.working') },
-        { name: "Microsoft Teams", level: t('skills.legend.intermediate') },
-        { name: "Visual Studio Code", level: t('skills.legend.intermediate') },
-        { name: "Antigravity", level: t('skills.legend.intermediate') },
-        { name: "Vercel", level: t('skills.legend.intermediate') },
-        { name: "Render", level: t('skills.legend.working') },
-        { name: "Resend API", level: t('skills.legend.working') },
-        { name: "Cron Jobs", level: t('skills.legend.working') },
+        { name: "AI API Integration", level: "intermediate" },
+        { name: "Chat GPT", level: "intermediate" },
+        { name: "Gemini Pro", level: "intermediate" },
+        { name: "Google AI Studio", level: "working" },
+        { name: "Claude", level: "working" },
       ],
     },
     {
-      title: t('skills.categories.ai'),
-      icon: <Cpu className="w-6 h-6 text-primary" />,
+      title: t("skills.categories.languages"),
+      icon: Languages,
       skills: [
-        { name: "Google AI Studio", level: t('skills.legend.working') },
-        { name: "Chat GPT", level: t('skills.legend.intermediate') },
-        { name: "Gemini Pro", level: t('skills.legend.intermediate') },
-        { name: "AI API Integration in Web Applications", level: t('skills.legend.intermediate') },
-        { name: "Claude", level: t('skills.legend.working') },
-      ],
-    },
-    {
-      title: t('skills.categories.languages'),
-      icon: <Languages className="w-6 h-6 text-primary" />,
-      skills: [
-        { name: "German", level: t('skills.legend.intermediate') },
-        { name: "English", level: t('skills.legend.intermediate') },
-        { name: "Spanish", level: t('skills.legend.advanced') },
-        { name: "Catalan", level: t('skills.legend.advanced') },
+        { name: "Spanish", level: "advanced" },
+        { name: "Catalan", level: "advanced" },
+        { name: "German", level: "intermediate" },
+        { name: "English", level: "intermediate" },
       ],
     },
   ];
 
-  const getLevelColor = (level: string) => {
-    const advanced = t('skills.legend.advanced');
-    const intermediate = t('skills.legend.intermediate');
-    const working = t('skills.legend.working');
-
-    if (level === advanced) {
-      return "bg-emerald-100/50 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20";
-    }
-    if (level === intermediate) {
-      return "bg-blue-100/50 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 border border-blue-200 dark:border-blue-500/20";
-    }
-    if (level === working) {
-      return "bg-amber-100/50 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400 border border-amber-200 dark:border-amber-500/20";
-    }
-    return "bg-muted text-muted-foreground border border-border";
-  };
-
-  const legendItems = [
-    { label: t('skills.legend.advanced'), color: "bg-emerald-500" },
-    { label: t('skills.legend.intermediate'), color: "bg-blue-500" },
-    { label: t('skills.legend.working'), color: "bg-amber-500" },
+  // Herramientas va aparte: son 17 y como tarjeta estrecha se convierte en
+  // una columna interminable. Ocupa el ancho completo con chips.
+  const tools: Skill[] = [
+    { name: "Jira", level: "advanced" },
+    { name: "Moodle Development", level: "advanced" },
+    { name: "Agile Methodologies", level: "advanced" },
+    { name: "Git", level: "intermediate" },
+    { name: "Docker", level: "intermediate" },
+    { name: "REST APIs", level: "intermediate" },
+    { name: "Supabase", level: "intermediate" },
+    { name: "Vercel", level: "intermediate" },
+    { name: "Visual Studio Code", level: "intermediate" },
+    { name: "Microsoft Teams", level: "intermediate" },
+    { name: "Slack", level: "intermediate" },
+    { name: "Antigravity", level: "intermediate" },
+    { name: "GitHub Actions", level: "working" },
+    { name: "Neon", level: "working" },
+    { name: "Resend API", level: "working" },
+    { name: "Render", level: "working" },
+    { name: "Cron Jobs", level: "working" },
   ];
+
+  const legend: Level[] = ["advanced", "intermediate", "working"];
 
   return (
-    <section id="skills" className="py-24 bg-secondary/5">
+    <section id="skills" className="py-24">
       <div className="container">
-        <div className="max-w-6xl mx-auto space-y-12">
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold flex items-center justify-center gap-3">
-              {t('skills.title')}
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              {t('skills.subtitle')}
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm mt-4">
-              {legendItems.map((item, index) => (
-                <div key={index} className="flex items-center gap-2 px-3 py-1 rounded-full bg-background border border-border/50 shadow-sm">
-                  <span className={`w-3 h-3 rounded-full ${item.color.split(' ')[0]}`} />
-                  <span className="text-muted-foreground font-medium">{item.label}</span>
-                </div>
+        <div className="mx-auto max-w-6xl space-y-8">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <p className="eyebrow mb-2">02 — {t("nav.skills")}</p>
+              <h2 className="text-3xl font-semibold md:text-4xl">
+                {t("skills.title")}
+              </h2>
+              <p className="mt-2 text-muted-foreground">
+                {t("skills.subtitle")}
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-4">
+              {legend.map(level => (
+                <span
+                  key={level}
+                  className="flex items-center gap-2 font-mono text-[11px] text-muted-foreground"
+                >
+                  <LevelBar level={level} />
+                  {t(LEVEL_LABEL_KEY[level])}
+                </span>
               ))}
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {skillCategories.map((category, index) => (
-              <SpotlightCard key={index} className="border-border/50 bg-card/50 hover:bg-card transition-all duration-300 hover:shadow-lg group">
-                <CardContent className="pt-6 space-y-6">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                      {category.icon}
-                    </div>
-                    <h3 className="text-xl font-bold text-foreground">
-                      {category.title}
-                    </h3>
+          <div className="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-4">
+            {skillCategories.map(({ title, icon: Icon, skills }) => (
+              <SpotlightCard
+                key={title}
+                className="rounded-3xl p-5"
+                spotlightColor="rgba(79, 217, 196, 0.12)"
+              >
+                <div className="mb-4 flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-2.5">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
+                      <Icon className="h-4 w-4 text-primary" />
+                    </span>
+                    <h3 className="text-[16.5px] font-semibold">{title}</h3>
                   </div>
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill, skillIndex) => (
-                      <div
-                        key={skillIndex}
-                        className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 hover:scale-105 cursor-default ${getLevelColor(skill.level)}`}
-                      >
+                  <span className="font-mono text-[11px] text-muted-foreground">
+                    {String(skills.length).padStart(2, "0")}
+                  </span>
+                </div>
+
+                <ul className="flex flex-col gap-2.5">
+                  {skills.map(skill => (
+                    <li
+                      key={skill.name}
+                      className="flex items-center justify-between gap-3 text-[13.5px] text-secondary-foreground"
+                    >
+                      <span className="truncate" title={skill.name}>
                         {skill.name}
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
+                      </span>
+                      <LevelBar level={skill.level} />
+                    </li>
+                  ))}
+                </ul>
               </SpotlightCard>
             ))}
+
+            <SpotlightCard
+              className="rounded-3xl p-6 sm:col-span-2 lg:col-span-4"
+              spotlightColor="rgba(79, 217, 196, 0.12)"
+            >
+              <div className="mb-4 flex items-center justify-between gap-3">
+                <div className="flex items-center gap-2.5">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
+                    <Wrench className="h-4 w-4 text-primary" />
+                  </span>
+                  <h3 className="text-[16.5px] font-semibold">
+                    {t("skills.categories.tools")}
+                  </h3>
+                </div>
+                <span className="font-mono text-[11px] text-muted-foreground">
+                  {tools.length}
+                </span>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {tools.map(tool => (
+                  <span
+                    key={tool.name}
+                    title={t(LEVEL_LABEL_KEY[tool.level])}
+                    className={cn(
+                      "rounded-full px-3 py-1.5 text-[13px] transition-colors",
+                      tool.level === "advanced" &&
+                        "border border-primary/30 bg-primary/10 text-primary",
+                      tool.level === "intermediate" &&
+                        "border border-border bg-secondary text-secondary-foreground",
+                      tool.level === "working" &&
+                        "border border-dashed border-border text-muted-foreground"
+                    )}
+                  >
+                    {tool.name}
+                  </span>
+                ))}
+              </div>
+            </SpotlightCard>
           </div>
 
-          <div className="text-center">
-            <p className="text-sm text-muted-foreground">
-              {t('skills.learning')}{" "}
-              <span className="text-foreground font-medium bg-primary/10 px-2 py-0.5 rounded">
-                React 19, TypeScript, Node.js
-              </span>
-            </p>
-          </div>
+          <p className="font-mono text-[12.5px] text-muted-foreground">
+            <span className="text-primary">{t("skills.learning")}</span> React
+            19, TypeScript, Node.js
+          </p>
         </div>
       </div>
     </section>

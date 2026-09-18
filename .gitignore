@@ -104,3 +104,6 @@ temp/
 *.db
 *.sqlite
 *.sqlite3
+
+# Claude Code (local overrides only; .claude/settings.json is shared)
+.claude/settings.local.json
